@@ -1,0 +1,13 @@
+ Starting STM model . . . 
+ STM version 0.1
+2022/06/24 15:28:55
+
+ Simulation ID: Raan
+ User par file: pars/Raan_u_pars.txt          
+ Par file: pars/pars.txt                 
+ Weather file: weather/Uppsala_weather.txt   
+ Level file: level/Raan_level.txt          
+
+
+ Done!
+2022/06/24 15:28:55
