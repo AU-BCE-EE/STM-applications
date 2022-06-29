@@ -29,11 +29,11 @@ ggsave('plots/ave_stor_temp_doy_floor.pdf', height = 3, width = 6)
 ggplot(dm, aes(doy, depth.slurry)) +
   geom_line() +
   facet_wrap(~ site) +
-  labs(x = 'Date', y = 'Slurry depth (m)', 
+  labs(x = 'Day of year', y = 'Slurry depth (m)', 
        colour = 'Position (from surface)') +
   theme_bw() +
   theme(legend.position = 'top')
-ggsave('plots/slurry_depth_doy.pdf', height = 3, width = 6)
+ggsave('plots/slurry_depth_doy.pdf', height = 2.1, width = 5.6)
 
 ggplot(rl, aes(doy, value/1000, colour = variable)) +
   geom_line(alpha = 0.7) +

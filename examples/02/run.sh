@@ -6,12 +6,12 @@ rm stm_output/*.*
 sim_start_time="$SECONDS"
 
 # Run all simulations in parallel
-./stm sim1 pars/pars.txt pars/user_pars1.txt &
-./stm sim2 pars/pars.txt pars/user_pars2.txt &
-./stm sim3 pars/pars.txt pars/user_pars3.txt 
-./stm sim4 pars/pars4.txt pars/user_pars1.txt 
-./stm sim5 pars/pars5.txt pars/user_pars1.txt 
-./stm sim6 pars/pars.txt  pars/user_pars6.txt 
+../../../STM/bin/stm sim1 pars/pars.txt pars/user_pars1.txt &
+../../../STM/bin/stm sim2 pars/pars.txt pars/user_pars2.txt &
+../../../STM/bin/stm sim3 pars/pars.txt pars/user_pars3.txt &
+../../../STM/bin/stm sim4 pars/pars4.txt pars/user_pars1.txt &
+../../../STM/bin/stm sim5 pars/pars5.txt pars/user_pars1.txt &
+../../../STM/bin/stm sim6 pars/pars.txt pars/user_pars6.txt 
 
 sim_end_time="$SECONDS"
 
@@ -19,14 +19,14 @@ sim_end_time="$SECONDS"
 mv *_temp.txt* stm_output
 mv *_weather* stm_output
 mv *_rates* stm_output
-mv *_log* stm_output
+mv *_log* logs 
 
 # Run R scripts
 
-R CMD BATCH --nosave --norestore 'main.R'
+R CMD BATCH --nosave --norestore 'main_plot.R'
 
 rm Rplots.pdf
-rm main.Rout
+rm main_plot.Rout
 rm .RData
 
 plot_end_time="$SECONDS"

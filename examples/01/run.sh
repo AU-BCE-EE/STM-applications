@@ -6,8 +6,8 @@ rm stm_output/*.*
 sim_start_time="$SECONDS"
 
 # Run all simulations in parallel
-./stm Raan pars/pars.txt pars/Raan_u_pars.txt weather/Uppsala_weather.txt level/Raan_level.txt &
-./stm Tjel pars/pars.txt pars/Tjel_u_pars.txt weather/Tjele_weather.txt level/Tjel_level.txt 
+../../../STM/bin/stm Raan pars/pars.txt pars/Raan_u_pars.txt weather/Uppsala_weather.txt level/Raan_level.txt &
+../../../STM/bin/stm Tjel pars/pars.txt pars/Tjel_u_pars.txt weather/Tjele_weather.txt level/Tjel_level.txt 
 
 sim_end_time="$SECONDS"
 
@@ -15,7 +15,7 @@ sim_end_time="$SECONDS"
 mv *_temp.txt* stm_output
 mv *_weather* stm_output
 mv *_rates* stm_output
-mv *_log* stm_output
+mv *_log* logs
 
 # Run R scripts
 

@@ -1,6 +1,6 @@
  Starting STM model . . . 
- STM version 0.1
-2022/06/24 15:28:55
+ STM version 0.2, 24 June 2022
+2022/06/25 06:19:59
 
  Simulation ID: Tjel
  User par file: pars/Tjel_u_pars.txt          
@@ -10,4 +10,5 @@
 
 
  Done!
-2022/06/24 15:28:55
+2022/06/25 06:19:59
+ Run time:    2.70000007E-02  seconds
