@@ -20,7 +20,7 @@ None      Added slurry temperature description, Constant = fixed temperature, No
 Weather curve parameter for STM heat transfer model (not read if using level file)
 Daily average air temperature (degrees C)
   Minimum      Maximum       Day of year of maximum
-    -15           15              190
+    -10          22              190
 Daily average global solar radiation (W/m2)
   Minimum      Maximum       Day of year of maximum
      15           246             190

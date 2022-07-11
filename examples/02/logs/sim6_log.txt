@@ -1,14 +1,12 @@
- Starting STM model . . . 
- STM version 0.2, 24 June 2022
-2022/06/25 06:44:56
+Starting STM model . . . 
+STM version 0.3, 6 July 2022
+Date and time: 2022/07/11 10:08:45
 
- Simulation ID: sim6
- User par file: pars/user_pars6.txt           
- Par file: pars/pars.txt                 
- Weather is calculated (no input file)
- Slurry level is calculated (no input file)
+Simulation ID: sim6
+User par file: pars/user_pars6.txt           
+Par file: pars/pars.txt                 
+Weather is calculated (no input file)
+Slurry level is calculated (no input file)
 
-
- Done!
-2022/06/25 06:44:56
- Run time:    3.29999998E-02  seconds
+Done!
+Run time:    0.0300  seconds

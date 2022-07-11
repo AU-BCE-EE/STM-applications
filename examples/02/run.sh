@@ -6,17 +6,18 @@ rm stm_output/*.*
 sim_start_time="$SECONDS"
 
 # Run all simulations in parallel
-../../../STM/bin/stm sim1 pars/pars.txt pars/user_pars1.txt &
-../../../STM/bin/stm sim2 pars/pars.txt pars/user_pars2.txt &
-../../../STM/bin/stm sim3 pars/pars.txt pars/user_pars3.txt &
-../../../STM/bin/stm sim4 pars/pars4.txt pars/user_pars1.txt &
-../../../STM/bin/stm sim5 pars/pars5.txt pars/user_pars1.txt &
-../../../STM/bin/stm sim6 pars/pars.txt pars/user_pars6.txt 
+../../../STM/bin/stm Ref. pars/pars.txt pars/user_pars1.txt &
+../../../STM/bin/stm Bur. pars/pars.txt pars/user_pars2.txt &
+../../../STM/bin/stm Ott. pars/pars.txt pars/user_pars3.txt &
+../../../STM/bin/stm Abs. pars/pars4.txt pars/user_pars1.txt &
+../../../STM/bin/stm Heat pars/pars5.txt pars/user_pars1.txt &
+../../../STM/bin/stm Emp. pars/pars.txt pars/user_pars6.txt 
+../../../STM/bin/stm Dup.  pars/pars.txt pars/user_pars7.txt 
 
 sim_end_time="$SECONDS"
 
 # Move output
-mv *_temp.txt* stm_output
+mv *_temp.csv* stm_output
 mv *_weather* stm_output
 mv *_rates* stm_output
 mv *_log* logs 

@@ -1,10 +1,10 @@
 Starting STM model . . . 
 STM version 0.3, 6 July 2022
-Date and time: 2022/07/11 10:08:45
+Date and time: 2022/07/11 10:35:37
 
-Simulation ID: sim4
-User par file: pars/user_pars1.txt           
-Par file: pars/pars4.txt                
+Simulation ID: Cold
+User par file: pars/user_pars3.txt           
+Par file: pars/pars.txt                 
 Weather is calculated (no input file)
 Slurry level is calculated (no input file)
 
@@ -5211,4 +5211,4 @@ Slurry level is calculated (no input file)
  Warning: day of year          365 , hour          24 , Slurry depth is greater than maximum depth! Check inputs.
 
 Done!
-Run time:    0.0340  seconds
+Run time:    0.0360  seconds
