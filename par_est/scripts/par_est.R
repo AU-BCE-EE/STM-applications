@@ -16,11 +16,12 @@ measd$height <- paste(measd$height, ' m')
 measd$site <- substr(measd$site, 1, 4)
 measd$site[measd$site == 'Rånä'] <- 'Raan'
 
-# Use only 3 for calibration
-measd <- subset(measd, site %in% c('Back', 'Fitt', 'Raan'))
-
 # Average temperature
 meas <- aggregate(temp ~ site + date, data = measd, FUN = mean)
+meas4 <- meas
+
+# Use only 3 for calibration
+meas <- subset(meas, site %in% c('Back', 'Fitt', 'Raan'))
 
 # Define residuals function
 # Uses sed utility to change values in copy of parameter template
@@ -49,18 +50,18 @@ resCalc <- function(p, meas.dat, fixed){
          ')
 
   # Move output
-  system('mv *_temp.txt* ../stm_output')
+  system('mv *_temp.csv* ../stm_output')
   system('mv *_weather* ../stm_output')
   system('mv *_rates* ../stm_output')
 
   # Read in calculated temperatures
   mod <- data.frame()
-  ff <- list.files('../stm_output', pattern = 'temp.txt')
+  ff <- list.files('../stm_output', pattern = 'temp.csv')
   for (i in ff) {
-    d <- read.table(paste0('../stm_output/', i), skip = 2, header = TRUE)
-    names(d) <- c('dos', 'doy', 'year', 'mass.slurry', 'mass.frozen', 
-                  'depth.slurry', 'temp.air', 'temp.wall', 'temp.floor', 
-                  'temp.slurry')
+    d <- read.csv(paste0('../stm_output/', i), skip = 2, header = TRUE)
+    names(d) <- c('day', 'doy', 'year', 'slurry_mass', 'frozen_mass', 
+                  'slurry_depth', 'air_temp', 'wall_temp', 'floor_temp', 
+                  'slurry_temp')
     d$site <- substr(i, 1, 4)
     mod <- rbind(mod, d)
   }
@@ -69,10 +70,10 @@ resCalc <- function(p, meas.dat, fixed){
   mod$date <- as.POSIXct(paste(mod$year, mod$doy), format = '%Y %j')
 
   # Merge measured and calculated
-  dat <- merge(meas[, c('site', 'date', 'temp')], mod[, c('site', 'date', 'temp.slurry')], by = c('site', 'date'))
+  dat <- merge(meas[, c('site', 'date', 'temp')], mod[, c('site', 'date', 'slurry_temp')], by = c('site', 'date'))
   nddat <<- dat
 
-  res <- dat$temp.slurry - dat$temp
+  res <- dat$slurry_temp - dat$temp
   obj <- sum(abs(res))
 
   return(obj)
@@ -102,7 +103,7 @@ system('./stm Back ../final_pars/pars.txt ../pars/Back_u_pars.txt ../weather/wea
        ')
 
 # Move output
-system('mv *_temp.txt* ../stm_output &
+system('mv *_temp.csv* ../stm_output &
         mv *_weather* ../stm_output &
         mv *_rates* ../stm_output')
 
