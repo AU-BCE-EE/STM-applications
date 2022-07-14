@@ -1,6 +1,6 @@
 Starting STM model . . . 
 STM version 0.3, 6 July 2022
-Date and time: 2022/07/14 18:52:38
+Date and time: 2022/07/14 19:16:55
 
 Simulation ID: Back
 User par file: ../pars/Back_u_pars.txt       
@@ -9,4 +9,4 @@ Weather file: ../weather/weather.txt
 Level file: ../level/Back_level.txt       
 
 Done!
-Run time:    0.0210  seconds
+Run time:    0.0260  seconds
