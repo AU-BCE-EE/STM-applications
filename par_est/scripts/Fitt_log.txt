@@ -1,0 +1,13 @@
+ Starting STM model . . . 
+ STM version 0.1
+2022/07/14 18:14:01
+
+ Simulation ID: Fitt
+ User par file: ../pars/Fitt_u_pars.txt       
+ Par file: ../final_pars/pars.txt        
+ Weather file: ../weather/weather.txt        
+ Level file: ../level/Fitt_level.txt       
+
+
+ Done!
+2022/07/14 18:14:01
