@@ -12,7 +12,7 @@ sim_start_time="$SECONDS"
 sim_end_time="$SECONDS"
 
 # Move output
-mv *_temp.txt* stm_output
+mv *_temp.csv* stm_output
 mv *_weather* stm_output
 mv *_rates* stm_output
 mv *_log* logs
@@ -20,10 +20,7 @@ mv *_log* logs
 # Run R scripts
 
 cd R_scripts
-  Rscript BATCH --nosave --norestore 'main_plot.R'
-  rm Rplots.pdf
-  rm main_plot.Rout
-  rm .RData
+  Rscript 'main_plot.R'
 cd ..
 
 plot_end_time="$SECONDS"

@@ -10,5 +10,5 @@ See the file contents (open in a text editor) to understand what the file does a
 
 # Linux
 Run the shell script `run.sh` in a shell with the following command: `./run.sh`.
-As with Windows, open the script to see exactly what it does.
+As with Windows, open the script to see what it does.
 

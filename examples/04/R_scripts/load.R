@@ -1,9 +1,9 @@
 
 # Model results
 dat <- data.frame()
-ff <- list.files('stm_output', pattern = 'temp.csv')
+ff <- list.files('../stm_output', pattern = 'temp.csv')
 for (i in ff) {
-  d <- read.csv(paste0('stm_output/', i), skip = 2)
+  d <- read.csv(paste0('../stm_output/', i), skip = 2)
   names(d) <- c('dos', 'doy', 'year', 'mass.slurry', 'mass.frozen', 
                 'depth.slurry', 'temp.air', 'temp.wall', 'temp.floor', 
                 'temp.slurry')

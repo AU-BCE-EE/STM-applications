@@ -1,4 +1,4 @@
-REM Batch file to run STM simulations and makes plots for example 1
+REM  Runs simulations and makes plots for example 4
 @ECHO OFF
 
 echo "Running STM example 4 . . ."
@@ -7,9 +7,14 @@ echo ""
 REM Remove old results
 del /Q stm_output\*.*
 
-REM Run both simulations
-stm.exe Raan pars\pars.txt pars\Raan_u_pars.txt weather\Uppsala_weather.txt level\Raan_level.txt
-stm.exe Tjel pars\pars.txt pars\Tjel_u_pars.txt weather\Tjele_weather.txt level\Tjel_level.txt 
+REM Run all simulations
+stm.exe Ref. pars/pars.txt pars/user_pars1.txt &
+stm.exe Bur. pars/pars.txt pars/user_pars2.txt &
+stm.exe Ott. pars/pars.txt pars/user_pars3.txt &
+stm.exe Abs. pars/pars4.txt pars/user_pars1.txt &
+stm.exe Heat pars/pars5.txt pars/user_pars1.txt &
+stm.exe Emp. pars/pars.txt pars/user_pars6.txt &
+stm.exe Dup.  pars/pars.txt pars/user_pars7.txt 
 
 REM Move output
 move *_temp.csv* stm_output >nul
@@ -17,7 +22,7 @@ move *_weather* stm_output >nul
 move *_rates* stm_output >nul
 move *_log* logs >nul
 
-REM Run R scripts (must have R installed and ENVIRONMENT variable set, along with some packages installed)
+REM Run R scripts to produce plots (must have R installed and ENVIRONMENT variable set, along with some packages installed)
 cd R_scripts
   Rscript main_plot.R
 cd..

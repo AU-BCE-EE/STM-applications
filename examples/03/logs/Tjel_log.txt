@@ -1,12 +1,12 @@
 Starting STM model . . . 
-STM version 0.4, 15 July 2022
-Date and time: 2022/07/15 13:39:31
+STM version 0.3, 6 July 2022
+Date and time: 2022/07/15 15:47:12
 
 Simulation ID: Tjel
-User par file: pars\Tjel_u_pars.txt          
-Par file: pars\pars.txt                 
-Weather file: weather\Tjele_weather.txt     
-Level file: level\Tjel_level.txt          
- 
+User par file: pars/Tjel_u_pars.txt          
+Par file: pars/pars.txt                 
+Weather file: weather/Tjele_weather.txt     
+Level file: level/Tjel_level.txt          
+
 Done!
-Run time:    0.0160  seconds
+Run time:    0.0230  seconds

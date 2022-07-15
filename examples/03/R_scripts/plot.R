@@ -13,7 +13,7 @@ ggplot(dl, aes(doy, value, colour = variable)) +
   theme_bw() +
   scale_color_brewer(palette = 'Dark2') +
   theme(legend.position = 'top')
-ggsave('../plots/ave_stor_temp_doy.pdf', height = 3, width = 6)
+ggsave('../plots/ave_stor_temp_doy.pdf', height = 3, width = 5)
 
 ggplot(dm, aes(doy, temp)) +
   geom_line(aes(doy, floor_temp), colour = 'gray32', lty = 1) +
@@ -24,7 +24,7 @@ ggplot(dm, aes(doy, temp)) +
        colour = 'Position (from surface)') +
   theme_bw() +
   theme(legend.position = 'top')
-ggsave('../plots/ave_stor_temp_doy_floor.pdf', height = 3, width = 6)
+ggsave('../plots/ave_stor_temp_doy_floor.pdf', height = 3, width = 5)
 
 ggplot(dm, aes(doy, slurry_depth)) +
   geom_line() +
@@ -33,7 +33,7 @@ ggplot(dm, aes(doy, slurry_depth)) +
        colour = 'Position (from surface)') +
   theme_bw() +
   theme(legend.position = 'top')
-ggsave('../plots/slurry_depth_doy.pdf', height = 2.1, width = 5.6)
+ggsave('../plots/slurry_depth_doy.pdf', height = 2.1, width = 5)
 
 ggplot(rl, aes(doy, value/1000, colour = variable)) +
   geom_line(alpha = 0.7) +
@@ -42,4 +42,4 @@ ggplot(rl, aes(doy, value/1000, colour = variable)) +
   scale_color_brewer(palette = 'Dark2') +
   theme_bw() +
   theme(legend.position = 'top') 
-ggsave('../plots/heat_flow.pdf', height = 3, width = 6)
+ggsave('../plots/heat_flow.pdf', height = 3, width = 5)
