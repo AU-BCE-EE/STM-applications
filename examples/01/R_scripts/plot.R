@@ -55,6 +55,6 @@ ggplot(rl2, aes(doy, qrel, colour = variable)) +
   labs(x = 'Day of year', y = expression('Heat flow out'~(kW))) +
   theme(legend.position = 'top') +
   theme_bw()
-ggsave('plots/heat_flow_rel.pdf', height = 3, width = 6)
+ggsave('../plots/heat_flow_rel.pdf', height = 3, width = 6)
 
 

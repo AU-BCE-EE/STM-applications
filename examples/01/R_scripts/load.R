@@ -1,6 +1,6 @@
 
 # Measurements
-dat <- read.csv('meas_temp/Sweden_storage_temp.csv')
+dat <- read.csv('../meas_temp/Sweden_storage_temp.csv')
 dat$date.time <- ymd_hm(dat$date.time)
 dat$date <- as.POSIXct(substr(dat$date.time, 1, 10))
 dat$depth <- paste(dat$depth, ' m')
