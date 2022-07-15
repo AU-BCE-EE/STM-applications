@@ -16,7 +16,7 @@ dat <- subset(dat, site == 'Raan')
 dm <- aggregate(temp ~ site + date, data = dat, FUN = mean)
 
 # Tjele data
-ddt <- read.csv('meas_temp/Tjele_storage_temp.csv')
+ddt <- read.csv('../meas_temp/Tjele_storage_temp.csv')
 ddt$date.time <- ymd_hm(ddt$date.time)
 ddt$date <- as.POSIXct(substr(ddt$date.time, 1, 10))
 dmt <- aggregate(temp ~ site + date, data = ddt, FUN = mean)
@@ -28,12 +28,9 @@ dat <- rbind(dat, ddt)
 
 # Model results
 mod <- data.frame()
-ff <- list.files('stm_output', pattern = 'temp.txt')
+ff <- list.files('../stm_output', pattern = 'temp.csv')
 for (i in ff) {
-  d <- read.table(paste0('stm_output/', i), skip = 2, header = TRUE)
-  names(d) <- c('dos', 'doy', 'year', 'mass.slurry', 'mass.frozen', 
-                'depth.slurry', 'temp.air', 'temp.wall', 'temp.floor', 
-                'temp.slurry')
+  d <- read.csv(paste0('../stm_output/', i), skip = 2, header = TRUE)
   d$site <- substr(i, 1, 4)
   mod <- rbind(mod, d)
 }
@@ -42,3 +39,19 @@ mod$year <- 2018 + mod$year
 mod$date <- as.POSIXct(paste(mod$year, mod$doy), format = '%Y %j')
 # Drop start-up year
 mod <- subset(mod, year > 2019)
+
+# Rates
+rates <- data.frame()
+ff <- list.files('../stm_output', pattern = 'rates.csv')
+for (i in ff) {
+  d <- read.csv(paste0('../stm_output/', i), skip = 2, header = TRUE)
+  d$site <- substr(i, 1, 4)
+  rates <- rbind(rates, d)
+}
+
+rl <- melt(rates, id.vars = c('day', 'doy', 'year', 'site'), 
+	   measure.vars = c('rad', 'air', 'floor', 'lower_wall', 'upper_wall', 'total'))
+
+rl$variable <- factor(rl$variable, levels = c('total', 'air', 'rad', 'upper_wall', 'lower_wall', 'floor'),
+                                   labels = c('Total', 'Air', 'Radiation', 'Upper wall', 'Lower wall', 'Floor'))
+

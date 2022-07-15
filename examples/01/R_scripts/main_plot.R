@@ -4,7 +4,6 @@ rm(list = ls())
 
 source('packages.R')
 source('load.R')
-source('rates.R')
 source('merge.R')
 source('plot.R')
 
