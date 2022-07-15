@@ -1,6 +1,6 @@
 Starting STM model . . . 
-STM version 0.3, 6 July 2022
-Date and time: 2022/07/15 10:10:30
+STM version 0.4, 15 July 2022
+Date and time: 2022/07/15 13:39:31
 
 Simulation ID: Raan
 User par file: pars\Raan_u_pars.txt          
@@ -9,4 +9,4 @@ Weather file: weather\Uppsala_weather.txt
 Level file: level\Raan_level.txt          
  
 Done!
-Run time:    0.0280  seconds
+Run time:    0.0310  seconds
