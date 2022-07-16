@@ -1,16 +1,13 @@
 # Define residuals function
 # Uses sed utility to change values in copy of parameter template
 
-resCalc <- function(p, meas.dat, fixed){
+resCalc <- function(p, meas, fixed){
 
   # Cheap fix for negative parameter values
   p <- abs(p)
   if (!missing(fixed)) {
     p <- c(p, fixed)
   }
-
-  # Change name 
-  meas <- meas.dat
 
   # Write parameter values to file
   system('cp ../pars/pars_template.txt ../pars/pars.txt')
@@ -28,6 +25,7 @@ resCalc <- function(p, meas.dat, fixed){
   # Move output
   system('mv *_temp.csv* ../stm_output')
   system('mv *_weather* ../stm_output')
+  system('mv *_log* ../stm_output')
   system('mv *_rates* ../stm_output')
 
   # Read in calculated temperatures
@@ -35,15 +33,18 @@ resCalc <- function(p, meas.dat, fixed){
   ff <- list.files('../stm_output', pattern = 'temp.csv')
   for (i in ff) {
     d <- read.csv(paste0('../stm_output/', i), skip = 2, header = TRUE)
-    d$site <- substr(i, 1, 4)
+    d$site.short <- substr(i, 1, 4)
     mod <- rbind(mod, d)
   }
 
-  mod$year <- 2019 + mod$year
+  # Important: first measurements start in 2020, so first model is 2019, so we have 1 year of start-up
+  mod$year <- 2018 + mod$year
   mod$date <- as.POSIXct(paste(mod$year, mod$doy), format = '%Y %j')
 
+  meas$date <- as.POSIXct(meas$date)
+
   # Merge measured and calculated
-  dat <- merge(meas[, c('site', 'date', 'temp')], mod[, c('site', 'date', 'slurry_temp')], by = c('site', 'date'))
+  dat <- merge(meas[, c('site.short', 'date', 'temp')], mod[, c('site.short', 'date', 'slurry_temp')], by = c('site.short', 'date'))
   nddat <<- dat
 
   res <- dat$slurry_temp - dat$temp

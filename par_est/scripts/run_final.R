@@ -9,6 +9,7 @@ system('./stm Back ../final_pars/pars.txt ../pars/Back_u_pars.txt ../weather/wea
 # Move output
 system('mv *_temp.csv* ../stm_output &
         mv *_weather* ../stm_output &
+        mv *_log* ../stm_output &
         mv *_rates* ../stm_output')
 
 

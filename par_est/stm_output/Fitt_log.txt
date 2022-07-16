@@ -1,6 +1,6 @@
 Starting STM model . . . 
 STM version 0.3, 6 July 2022
-Date and time: 2022/07/14 19:16:55
+Date and time: 2022/07/16 06:33:43
 
 Simulation ID: Fitt
 User par file: ../pars/Fitt_u_pars.txt       
