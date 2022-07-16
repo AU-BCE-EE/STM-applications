@@ -11,4 +11,5 @@ for (i in 1:length(fpars)) {
 
 # Place copy in par_sets directory
 system(paste0('cp ../final_pars/pars.txt ../../par_sets/pars', parver, '.txt'))
+system('cp ../final_pars/pars.txt ../../par_sets/pars.txt')
 
