@@ -1,6 +1,6 @@
 Starting STM model . . . 
 STM version 0.3, 6 July 2022
-Date and time: 2022/07/15 14:43:18
+Date and time: 2022/07/15 20:32:12
 
 Simulation ID: Abs.
 User par file: pars/user_pars1.txt           
@@ -5211,4 +5211,4 @@ Slurry level is calculated (no input file)
  Warning: day of year          365 , hour          24 , Slurry depth is greater than maximum depth! Check inputs.
 
 Done!
-Run time:    0.0390  seconds
+Run time:    0.0560  seconds

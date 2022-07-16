@@ -13,7 +13,7 @@ ggplot(d, aes(date, temp.slurry, colour = factor(sim))) +
   scale_x_date(date_breaks = "1 month", date_labels =  "%m") +
   theme(legend.position = 'top') +
   guides(colour = guide_legend(nrow = 2))
-ggsave('../plots/ave_stor_temp_date.pdf', height = 2.68, width = 3)
+ggsave('../plots/ex4_ave_stor_temp_date.pdf', height = 2.68, width = 3)
 
 d <- subset(dat, sim %in% c('Ref.', 'Ott.', 'Dup.'))
 ggplot(d, aes(date, temp.slurry, colour = factor(sim))) +
@@ -25,7 +25,7 @@ ggplot(d, aes(date, temp.slurry, colour = factor(sim))) +
   scale_color_brewer(palette = 'Dark2') +
   scale_x_date(date_breaks = "1 month", date_labels =  "%m") +
   theme(legend.position = 'top')
-ggsave('../plots/ave_stor_temp_date_loc.pdf', height = 3.4, width = 3)
+ggsave('../plots/ex4_ave_stor_temp_date_loc.pdf', height = 3.4, width = 3)
 
 
 ggplot(dat, aes(date, mass.slurry, colour = factor(sim))) +
@@ -36,7 +36,7 @@ ggplot(dat, aes(date, mass.slurry, colour = factor(sim))) +
   scale_color_brewer(palette = 'Dark2') +
   scale_x_date(date_breaks = "1 month", date_labels =  "%m") +
   theme(legend.position = 'top')
-ggsave('../plots/slurry_mass_date.pdf', height = 3, width = 3)
+ggsave('../plots/ex4_slurry_mass_date.pdf', height = 3, width = 3)
 
 dd <- subset(dat, sim %in% c('Ref.', 'Emp.'))
 dd$sim <- as.character(dd$sim)
@@ -50,6 +50,6 @@ ggplot(dd, aes(date, depth.slurry, colour = sim, lty = sim)) +
   scale_x_date(date_breaks = "1 month", date_labels =  "%m") +
   theme_bw() +
   theme(legend.position = 'top')
-ggsave('../plots/slurry_depth_date.pdf', height = 2.6, width = 3)
+ggsave('../plots/ex4_slurry_depth_date.pdf', height = 2.6, width = 3)
 
 

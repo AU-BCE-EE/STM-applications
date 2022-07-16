@@ -24,10 +24,7 @@ mv *_log* logs
 
 # Run R scripts to produce plots
 cd R_scripts
-  Rscript --nosave --norestore 'main_plot.R'
-  rm Rplots.pdf
-  rm main_plot.Rout
-  rm .RData
+  Rscript 'main_plot.R'
 cd ..
 
 plot_end_time="$SECONDS"
