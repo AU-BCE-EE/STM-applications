@@ -41,8 +41,6 @@ resCalc <- function(p, meas, fixed){
   mod$year <- 2018 + mod$year
   mod$date <- as.POSIXct(paste(mod$year, mod$doy), format = '%Y %j')
 
-  meas$date <- as.POSIXct(meas$date)
-
   # Merge measured and calculated
   dat <- merge(meas[, c('site.short', 'date', 'temp')], mod[, c('site.short', 'date', 'slurry_temp')], by = c('site.short', 'date'))
   nddat <<- dat

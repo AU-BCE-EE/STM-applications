@@ -4,6 +4,9 @@
 
 rm(list = ls())
 
+# Set parameter set name
+parver <- '0.1'
+
 source('remove.R')
 source('packages.R')
 source('res_func.R')

@@ -1,10 +1,10 @@
 Starting STM model . . . 
 STM version 0.3, 6 July 2022
-Date and time: 2022/07/16 06:33:43
+Date and time: 2022/07/16 08:47:37
 
 Simulation ID: Raan
 User par file: ../pars/Raan_u_pars.txt       
-Par file: ../final_pars/pars.txt        
+Par file: ../pars/pars.txt              
 Weather file: ../weather/weather.txt        
 Level file: ../level/Raan_level.txt       
 
