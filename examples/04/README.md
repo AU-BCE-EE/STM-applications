@@ -3,7 +3,7 @@ Calculation of stored slurry temperature for multiple scenarios with simplified 
 This README file explains how to run the simulations in example 4.
 This example differs from 1 and 2 by using separate sub-directories for input and output files.
 Also, R scripts are included for creating plots.
-Note that if you do not have R installed, or are missing the add-on packages needed, or have not set up your computer to use the `Rscript` command, the plotting scripts will not run.
+Note that if you do not have R installed, are missing the add-on packages needed, or have not set up your computer to use the `Rscript` command, the plotting scripts will not run.
 But you will still get output files from STM.
 
 # Windows

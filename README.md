@@ -1,20 +1,21 @@
 # STM-application
 Applications, examples, and parameters for STM, a simple heat transfer model for predicting the temperature of stored animal slurry or similar materials.
-See [the STM repo](https://github.com/sashahafner/STM) for more info on the model/program itself.
+See [the STM repo](https://github.com/sashahafner/STM) for source code and more info on the model/program itself.
 
 # Getting started
-If you are new to STM, you should copy this entire repository.
-The simplest approach for non-GitHub users is to click on the green "Code" button and then "Download ZIP".
+New STM users interested in learning how to use the program should copy this entire repository.
+The simplest way for non-GitHub users to do this is to click on the green "Code" button toward the top right of the repo main page and then "Download ZIP".
 Extract the downloaded file, and check out the `examples` directory.
 You can find more details below.
 
 # `examples`
 The `examples` directory includes 4 examples.
-The first two are quite simple, and for them, STM should be called directly from a console (e.g., Command Prompt in Windows or Bash in Linux).
-See the `README.md` files in each subdirectory for detailed instructions.
-Examples 3 and 4 are more complicated, with simulation of multiple locations and the use of R for plotting results. 
+Each example includes all the files necessary for running STM, including executable versions for Windows and Linux.
+The first two examples are quite simple, and for them, STM is called directly from a console (e.g., Command Prompt in Windows or Bash in Linux).
+Examples 3 and 4 are more complicated, with simulation of multiple locations or scenarios and the use of R for plotting results. 
 These examples include batch files (for Windows) and shell scripts (for Linux) for calling STM, moving files, and calling R scripts.
 These two examples should provide some ideas for more complicated workflows.
+See the `README.md` files in each subdirectory for more detailed instructions.
 
 # `par_calc`
 This directory contains a single xlsx file that can be used for calculating parameter values.
@@ -25,7 +26,12 @@ Scripts for parameter estimation based on fitting to measurements made at 3 site
 
 # `par_sets`
 If you are here for just the latest version of the default parameter file, you can find it here.
+For information on how these values were determined, see the `par_est` directory.
+The file `pars.txt` will contain the latest parameter set, while earlier versions can be identified by the version number in the file names.
 
 # Bugs and more
 If you find a problem in this repo (e.g., examples don't work or you see a mistake) please create an [issue](https://github.com/sashahafner/STM-applications/issues).
+Some anticipated issues are listed below.
 
+* Missing stm.exe on Windows. Windows anti-virus software may delete stm.exe as soon as it is downloaded simply because it is an executable. 
+* Missing R or R packages. The plots in examples 3 and 4 will not be created unless R and all required packages are installed (see `examples/*/R_scripts/packages.R`) and the `Rscript` command works.
