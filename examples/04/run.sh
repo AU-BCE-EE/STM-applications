@@ -2,6 +2,7 @@
 
 # Remove old results
 rm stm_output/*.*
+rm plots/*.*
 
 sim_start_time="$SECONDS"
 
