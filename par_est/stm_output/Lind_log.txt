@@ -2,11 +2,11 @@ Starting STM model . . .
 STM version 0.3, 6 July 2022
 Date and time: 2022/08/02 06:42:42
 
-Simulation ID: Fitt
-User par file: ../pars/Fitt_u_pars.txt       
+Simulation ID: Lind
+User par file: ../pars/Lind_u_pars.txt       
 Par file: ../final_pars/pars.txt        
 Weather file: ../weather/weather.txt        
-Level file: ../level/Fitt_level.txt       
+Level file: ../level/Raan_level.txt       
 
 Done!
-Run time:    0.0250  seconds
+Run time:    0.0260  seconds
