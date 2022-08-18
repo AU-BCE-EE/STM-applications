@@ -10,7 +10,10 @@ You can find more details below.
 
 # `examples`
 The `examples` directory includes 4 examples.
-Each example includes all the files necessary for running STM, including executable versions for Windows and Linux.
+Each example includes all the files necessary for running STM *except* the executable versions of STM.
+Users can download the latest versions from the [STM repo](https://github.com/sashahafner/STM).
+After downloading the correct file, put a copy into each example subdirectory (or set the PATH variable).
+
 The first two examples are quite simple, and for them, STM is called directly from a console (e.g., Command Prompt in Windows or Bash in Linux).
 Examples 3 and 4 are more complicated, with simulation of multiple locations or scenarios and the use of R for plotting results. 
 These examples include batch files (for Windows) and shell scripts (for Linux) for calling STM, moving files, and calling R scripts.

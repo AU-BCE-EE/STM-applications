@@ -7,7 +7,8 @@ Note that if you do not have R installed, are missing the add-on packages needed
 But you will still get output files from STM.
 
 # Windows
-Double-click the batch file `run.bat`.
+0. Download the appropriate version of `stm.exe` from the [STM repo](https://github.com/sashahafner/STM) and copy it into this folder (or set the PATH variable).
+1. Double-click the batch file `run.bat`.
 See the file contents (open in a text editor) to understand what the file does and how to make changes.
 
 # Linux
