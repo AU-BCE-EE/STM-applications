@@ -22,7 +22,7 @@ move *_weather* stm_output >nul
 move *_rates* stm_output >nul
 move *_log* logs >nul
 
-REM Run R scripts to produce plots (must have R installed and ENVIRONMENT variable set, along with some packages installed)
+REM Run R scripts to produce plots (must have R installed and PATH variable set, along with some packages installed)
 cd R_scripts
   Rscript main_plot.R
 cd..

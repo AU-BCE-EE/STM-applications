@@ -1,7 +1,7 @@
 REM Batch file to run STM simulations and makes plots for example 1
 @ECHO OFF
 
-echo "Running STM example 1 . . ."
+echo "Running STM example 3 . . ."
 echo ""
 
 REM Remove old results
@@ -17,7 +17,7 @@ move *_weather* stm_output >nul
 move *_rates* stm_output >nul
 move *_log* logs >nul
 
-REM Run R scripts (must have R installed and ENVIRONMENT variable set, along with some packages installed)
+REM Run R scripts (must have R installed and PATH variable set, along with some packages installed)
 cd R_scripts
   Rscript main_plot.R
 cd..
