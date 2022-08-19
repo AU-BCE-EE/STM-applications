@@ -15,18 +15,6 @@ ggplot(d, aes(date, temp.slurry, colour = factor(sim))) +
   guides(colour = guide_legend(nrow = 2))
 ggsave('../plots/ex4_ave_stor_temp_date.pdf', height = 2.68, width = 3)
 
-d <- subset(dat, sim %in% c('Ref.', 'Ott.', 'Dup.'))
-ggplot(d, aes(date, temp.slurry, colour = factor(sim))) +
-  geom_line(aes(y = temp.air), alpha = 0.4, lty = '2121') +
-  geom_line() +
-  labs(x = 'Date (month)', y = expression('Temperature'~(degree*C)), 
-       colour = '') +
-  theme_bw() +
-  scale_color_brewer(palette = 'Dark2') +
-  scale_x_date(date_breaks = "1 month", date_labels =  "%m") +
-  theme(legend.position = 'top')
-ggsave('../plots/ex4_ave_stor_temp_date_loc.pdf', height = 3.4, width = 3)
-
 
 ggplot(dat, aes(date, mass.slurry, colour = factor(sim))) +
   geom_line() +
@@ -52,4 +40,28 @@ ggplot(dd, aes(date, depth.slurry, colour = sim, lty = sim)) +
   theme(legend.position = 'top')
 ggsave('../plots/ex4_slurry_depth_date.pdf', height = 2.6, width = 3)
 
+d <- subset(dat, sim %in% c('Ref.', 'Ott.', 'Dup.'))
+tp <- ggplot(d, aes(date, temp.slurry, colour = factor(sim))) +
+  geom_line(aes(y = temp.air), alpha = 0.4, lty = '1111') +
+  geom_line() +
+  labs(x = '', y = expression('Temperature'~(degree*C)), 
+       colour = '') +
+  theme_bw() +
+  scale_color_brewer(palette = 'Dark2') +
+  scale_x_date(date_breaks = "1 month", date_labels =  "%m") +
+  theme(legend.position = 'top')
+ggsave('../plots/ex4_ave_stor_temp_date_loc.pdf', tp, height = 3.4, width = 3)
 
+d <- subset(dat, sim %in% c('Ref.', 'Ott.', 'Dup.'))
+mp <- ggplot(d, aes(date, CH4_emis_rate/1000, colour = factor(sim))) +
+  geom_line(lty = '2121') +
+  labs(x = 'Date (month)', y = expression(CH[4]~'emission'~(kg~d^'-1')), 
+       colour = '') +
+  theme_bw() +
+  scale_color_brewer(palette = 'Dark2') +
+  scale_x_date(date_breaks = "1 month", date_labels =  "%m") +
+  theme(legend.position = 'top')
+ggsave('../plots/ex4_abm_CH4_date_loc.pdf', mp, height = 3.4, width = 3)
+
+cp <- grid.arrange(tp, mp)
+ggsave('../plots/ex4_temp_CH4_date_loc.pdf', cp, height = 6, width = 3)

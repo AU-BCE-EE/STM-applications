@@ -24,7 +24,7 @@ move *_log* logs >nul
 
 REM Run R scripts to produce plots (must have R installed and PATH variable set, along with some packages installed)
 cd R_scripts
-  Rscript main_plot.R
+  Rscript main.R
 cd..
 
 echo "Done"

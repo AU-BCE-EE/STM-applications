@@ -25,7 +25,7 @@ mv *_log* logs
 
 # Run R scripts to produce plots
 cd R_scripts
-  Rscript 'main_plot.R'
+  Rscript 'main.R'
 cd ..
 
 plot_end_time="$SECONDS"
