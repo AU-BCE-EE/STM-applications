@@ -8,6 +8,8 @@ for (i in unique(dat$sim)) {
   slurry_mass <- rbind(slurry_mass, slurry_mass)
   temp_C$time <- slurry_mass$time <- 1:nrow(temp_C)
   out <- abm(2*365, mng_pars = list(slurry_mass = slurry_mass, area = 1018, temp_C = temp_C), startup = 365)
-  dat[dat$sim == i, 'CH4_emis_rate'] <- out$CH4_emis_rate[1:365]
-  dat[dat$sim == i, 'CH4_emis_cum'] <- out$CH4_emis_cum[1:365]
+  # Remove duplicate times from emptying events
+  out <- out[!duplicated(out$time), ]
+  dat[dat$sim == i, 'CH4_emis_rate'] <- out$CH4_emis_rate
+  dat[dat$sim == i, 'CH4_emis_cum'] <- out$CH4_emis_cum
 }

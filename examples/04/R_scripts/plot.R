@@ -54,16 +54,18 @@ ggsave('../plots/ex4_ave_stor_temp_date_loc.pdf', tp, height = 3.4, width = 3)
 
 d <- subset(dat, sim %in% c('Ref.', 'Ott.', 'Dup.'))
 mp <- ggplot(d, aes(date, CH4_emis_rate/1000, colour = factor(sim))) +
-  geom_line(lty = '2121') +
+  geom_line() +
   labs(x = 'Date (month)', y = expression(CH[4]~'emission'~(kg~d^'-1')), 
        colour = '') +
   theme_bw() +
   scale_color_brewer(palette = 'Dark2') +
   scale_x_date(date_breaks = "1 month", date_labels =  "%m") +
-  theme(legend.position = 'top')
+  theme(legend.position = 'none')
 ggsave('../plots/ex4_abm_CH4_date_loc.pdf', mp, height = 3.4, width = 3)
 
-cp <- grid.arrange(tp, mp)
+mat <- matrix(c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                2, 2, 2, 2, 2, 2, 2, 2), ncol = 1)
+cp <- grid.arrange(tp, mp, layout_matrix = mat)
 ggsave('../plots/ex4_temp_CH4_date_loc.pdf', cp, height = 6, width = 3)
 
 d <- subset(dat, sim %in% c('Ref.', 'Ott.', 'Dup.'))
