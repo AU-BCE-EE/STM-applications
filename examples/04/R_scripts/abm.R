@@ -1,4 +1,4 @@
-
+# Run ABM model and add output to main data frame for plotting
 
 for (i in unique(dat$sim)) {
   dd <- subset(dat, sim == i)
@@ -13,3 +13,6 @@ for (i in unique(dat$sim)) {
   dat[dat$sim == i, 'CH4_emis_rate'] <- out$CH4_emis_rate
   dat[dat$sim == i, 'CH4_emis_cum'] <- out$CH4_emis_cum
 }
+
+dat.cum <- dat[dat$doy == 365, c('sim', 'date', 'mass.slurry', 'CH4_emis_cum')]
+dat.cum$CH4_emis_cum_Mg <- dat.cum$CH4_emis_cum / 1E6
