@@ -3,7 +3,8 @@ Applications, examples, and parameters for STM, a simple heat transfer model for
 See [the STM repo](https://github.com/sashahafner/STM) for source code and more info on the model/program itself.
 
 # Getting started
-New STM users interested in learning how to use the program should copy this entire repository.
+First, install STM by following the instructions under "Installation" in the [STM repo README file](https://github.com/sashahafner/STM#readme).
+New STM users interested in learning how to use the program should copy this entire STM-applications repository.
 The simplest way for non-GitHub users to do this is to click on the green "Code" button toward the top right of the repo main page and then "Download ZIP".
 Extract the downloaded file, and check out the `examples` directory.
 You can find more details below.
