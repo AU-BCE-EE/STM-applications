@@ -37,8 +37,9 @@ resCalc <- function(p, meas, fixed){
     mod <- rbind(mod, d)
   }
 
-  # Important: first measurements start in 2020, so first model is 2019, so we have 1 year of start-up
-  mod$year <- 2018 + mod$year
+  # First measurements start in May (Back, Raan) or April (Fitt) 2020
+  mod$year <- 2016 + mod$year
+  # So mod$year of 1 (first year of sim) is 2017, giving about 3.5 year of startup
   mod$date <- as.POSIXct(paste(mod$year, mod$doy), format = '%Y %j')
 
   # Merge measured and calculated

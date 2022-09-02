@@ -23,3 +23,9 @@ dat <- subset(dat, depth == depth.min | depth == depth.max)
 
 # Average measured temperature
 dat.mean <- aggregate(temp ~ site + site.short + date, data = dat, FUN = mean)
+
+# Get unique depths used for reporting
+depths <- unique(dat[, c('site', 'depth.min', 'depth.max')])
+
+# Get date ranges
+dates <- aggregate(date ~ site + site.short, data = dat, FUN = function(x) as.character(range(x)))

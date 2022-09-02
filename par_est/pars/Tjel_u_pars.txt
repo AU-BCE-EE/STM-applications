@@ -1,5 +1,5 @@
 Settings for STM heat transfer model
-1095      Duration of simulation (days)
+1825      Duration of simulation (days)
 1         Starting day of simulation as day of year (1-365, no leap years)
 1         Number of identical storages
 5.5       Total (maximum) depth (m)
