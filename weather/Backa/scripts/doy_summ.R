@@ -17,14 +17,19 @@ dat$year <- as.integer(as.character(dat$date, format = '%Y'))
 # Use 2021 measurements for May
 dat <- subset(dat, date >= ymd('2020 06 01') & date <= ymd('2021 07 31'))
 
+
+# Convert radiation from MJ/m2 (per d) to W/m2
+# NTS: this looks correct based on final comparison to Uppsala, but need to check with Kristina
+dat$Solar.rad. <- signif(dat$Solar.rad. * 1E6 / 86400, 3)
+
 # Summarize by doy
-mns <- aggregate(dat[, c('temp.1.5m', 'rad')], dat[, c('doy'), drop = FALSE], mean)
+mns <- aggregate(dat[, c('mean.temp', 'Solar.rad.')], dat[, c('doy'), drop = FALSE], mean)
 yrs <- aggregate(dat[, c('year')], dat[, c('doy'), drop = FALSE], function(x) x[1])
-ns <- aggregate(dat[, c('temp.1.5m')], dat[, c('doy'), drop = FALSE], function(x) length(x))
+ns <- aggregate(dat[, c('mean.temp')], dat[, c('doy'), drop = FALSE], function(x) length(x))
 datd <- merge(mns, yrs, by = 'doy')
 datd <- rounddf(datd, 3, signif)
 
 # Check n
 if (any(ns$n > 24)) stop('Count error')
 
-write.table(datd, '../output/Uppsala_doy_weather.txt', row.names = FALSE)
+write.table(datd, '../output/Backa_doy_weather.txt', row.names = FALSE)
