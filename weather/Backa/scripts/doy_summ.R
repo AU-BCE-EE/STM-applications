@@ -32,4 +32,4 @@ datd <- rounddf(datd, 3, signif)
 # Check n
 if (any(ns$n > 24)) stop('Count error')
 
-write.table(datd, '../output/Backa_doy_weather.txt', row.names = FALSE)
+write.csv(datd, '../output/Backa_weather.csv', row.names = FALSE)

@@ -22,4 +22,4 @@ dat$glorad <- signif(dat$glorad * 1E6 / 86400, 3)
 
 datd <- dat[(dat$year == 2020 & dat$doy >= cut.doy) | (dat$year == 2021 & dat$doy < cut.doy), c('doy', 'temp', 'glorad')]
 
-write.table(datd, '../output/Foulum_weather.txt', row.names = FALSE)
+write.csv(datd, '../output/Foulum_weather.csv', row.names = FALSE)
