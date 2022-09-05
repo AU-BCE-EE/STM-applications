@@ -17,9 +17,9 @@ resCalc <- function(p, meas, fixed){
 
   # Run model
   cat('. ')
-  system('./stm Back ../pars/pars.txt ../pars/Back_u_pars.txt ../weather/weather.txt ../level/Back_level.txt &
-          ./stm Fitt ../pars/pars.txt ../pars/Fitt_u_pars.txt ../weather/weather.txt ../level/Fitt_level.txt &
-          ./stm Raan ../pars/pars.txt ../pars/Raan_u_pars.txt ../weather/weather.txt ../level/Raan_level.txt
+  system('./stm Back ../pars/pars.txt ../pars/Back_u_pars.txt ../weather/Backa_weather.csv ../level/Back_level.txt &
+          ./stm Fitt ../pars/pars.txt ../pars/Fitt_u_pars.txt ../weather/Backa_weather.csv ../level/Fitt_level.txt &
+          ./stm Raan ../pars/pars.txt ../pars/Raan_u_pars.txt ../weather/Uppsala_weather.csv ../level/Raan_level.txt
          ')
 
   # Move output
