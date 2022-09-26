@@ -1,0 +1,12 @@
+Starting STM model . . . 
+STM version 0.4, 15 July 2022
+Date and time: 2022/09/26 19:36:21
+
+Simulation ID: E   
+User par file: pars/E_user_pars.txt          
+Par file: pars/pars.txt                 
+Weather file: weather/Tjele_weather.txt     
+Level file: level/E_level.txt             
+
+Done!
+Run time:    0.0500  seconds

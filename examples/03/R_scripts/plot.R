@@ -1,12 +1,15 @@
 # Very strange that some parts of the temp (meas) lines are not plotted with geom_line()
 # Can eliminate by dropping temp == NA
 
-dl$site <- factor(dl$site, levels = c('Raan', 'Tjel'), labels = c('Sweden', 'Denmark'))
-dm$site <- factor(dm$site, levels = c('Raan', 'Tjel'), labels = c('Sweden', 'Denmark'))
-rl$site <- factor(rl$site, levels = c('Raan', 'Tjel'), labels = c('Sweden', 'Denmark'))
+dl$site <- factor(dl$site, levels = c('D', 'E'), labels = c('Sweden', 'Denmark'))
+rl$site <- factor(rl$site, levels = c('D', 'E'), labels = c('Sweden', 'Denmark'))
+
+table(dl$site, exclude = NULL)
+table(mod$site, exclude = NULL)
+table(dl$site)
 
 ggplot(dl, aes(doy, value, colour = variable)) +
-  geom_path() +
+  geom_line() +
   facet_wrap(~ site) +
   labs(x = 'Day of year', y = expression('Temperature'~(degree*C)), 
        colour = '') +
@@ -15,7 +18,7 @@ ggplot(dl, aes(doy, value, colour = variable)) +
   theme(legend.position = 'top')
 ggsave('../plots/ex3_ave_stor_temp_doy.pdf', height = 3, width = 5)
 
-ggplot(dm, aes(doy, temp)) +
+ggplot(dat, aes(doy, temp)) +
   geom_line(aes(doy, floor_temp), colour = 'gray32', lty = 1) +
   geom_line(aes(doy, air_temp), colour = 'skyblue', lty = 1) +
   geom_path(col = 'red') +
@@ -26,7 +29,7 @@ ggplot(dm, aes(doy, temp)) +
   theme(legend.position = 'top')
 ggsave('../plots/ex3_ave_stor_temp_doy_floor.pdf', height = 3, width = 5)
 
-ggplot(dm, aes(doy, slurry_depth)) +
+ggplot(dat, aes(doy, slurry_depth)) +
   geom_line() +
   facet_wrap(~ site) +
   labs(x = 'Day of year', y = 'Slurry depth (m)', 

@@ -7,8 +7,8 @@ rm plots/*.*
 sim_start_time="$SECONDS"
 
 # Run all simulations in parallel
-./stm Raan pars/pars.txt pars/Raan_u_pars.txt weather/Uppsala_weather.txt level/Raan_level.txt &
-./stm Tjel pars/pars.txt pars/Tjel_u_pars.txt weather/Tjele_weather.txt level/Tjel_level.txt 
+./stm D pars/pars.txt pars/D_user_pars.txt weather/Uppsala_weather.txt level/D_level.txt &
+./stm E pars/pars.txt pars/E_user_pars.txt weather/Tjele_weather.txt level/E_level.txt 
 
 sim_end_time="$SECONDS"
 
@@ -19,7 +19,6 @@ mv *_rates* stm_output
 mv *_log* logs
 
 # Run R scripts
-
 cd R_scripts
   Rscript 'main_plot.R'
 cd ..
