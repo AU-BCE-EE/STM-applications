@@ -1,16 +1,20 @@
 # Very strange that some parts of the temp (meas) lines are not plotted with geom_line()
 # Can eliminate by dropping temp == NA
+# Problem seems to be multiple obs for same doy, some with NA
 
-dl$site <- factor(dl$site, levels = c('D', 'E'), labels = c('Sweden', 'Denmark'))
-rl$site <- factor(rl$site, levels = c('D', 'E'), labels = c('Sweden', 'Denmark'))
+dl$site.nm <- factor(dl$site, levels = c('C', 'E'), labels = c('Sweden (C)', 'Denmark (E)'))
+rl$site.nm <- factor(rl$site, levels = c('C', 'E'), labels = c('Sweden (C)', 'Denmark (E)'))
 
-table(dl$site, exclude = NULL)
-table(mod$site, exclude = NULL)
-table(dl$site)
+# Issue is I want the NAs for the missing measurement period spring to summer, but I do not want them where there are other obs with measurements (different year)
+dl <- subset(dl, !is.na(value) | 
+	     (site == 'C' & date > as.POSIXct('2021-04-28') & date < as.POSIXct('2021-06-15')) |
+	     (site == 'E' & date > as.POSIXct('2021-03-09') & date < as.POSIXct('2021-07-14')))
+
+dl <- dl[order(dl$doy), ]
 
 ggplot(dl, aes(doy, value, colour = variable)) +
   geom_line() +
-  facet_wrap(~ site) +
+  facet_wrap(~ site.nm) +
   labs(x = 'Day of year', y = expression('Temperature'~(degree*C)), 
        colour = '') +
   theme_bw() +

@@ -7,7 +7,7 @@ rm plots/*.*
 sim_start_time="$SECONDS"
 
 # Run all simulations in parallel
-./stm D pars/pars.txt pars/D_user_pars.txt weather/Uppsala_weather.txt level/D_level.txt &
+./stm C pars/pars.txt pars/C_user_pars.txt weather/Backa_weather.csv level/C_level.txt &
 ./stm E pars/pars.txt pars/E_user_pars.txt weather/Tjele_weather.txt level/E_level.txt 
 
 sim_end_time="$SECONDS"
