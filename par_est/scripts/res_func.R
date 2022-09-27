@@ -17,9 +17,9 @@ resCalc <- function(p, meas, fixed){
 
   # Run model
   cat('. ')
-  system('./stm Back ../pars/pars.txt ../pars/Back_u_pars.txt ../weather/Backa_weather.csv ../level/Back_level.txt &
-          ./stm Fitt ../pars/pars.txt ../pars/Fitt_u_pars.txt ../weather/Backa_weather.csv ../level/Fitt_level.txt &
-          ./stm Raan ../pars/pars.txt ../pars/Raan_u_pars.txt ../weather/Uppsala_weather.csv ../level/Raan_level.txt
+  system('./stm A ../pars/pars.txt ../pars/A_user_pars.txt ../weather/Backa_weather.csv ../level/A_level.txt &
+          ./stm B ../pars/pars.txt ../pars/B_user_pars.txt ../weather/Backa_weather.csv ../level/B_level.txt &
+          ./stm D ../pars/pars.txt ../pars/D_user_pars.txt ../weather/Uppsala_weather.csv ../level/D_level.txt
          ')
 
   # Move output
@@ -33,7 +33,7 @@ resCalc <- function(p, meas, fixed){
   ff <- list.files('../stm_output', pattern = 'temp.csv')
   for (i in ff) {
     d <- read.csv(paste0('../stm_output/', i), skip = 2, header = TRUE)
-    d$site.short <- substr(i, 1, 4)
+    d$site <- substr(i, 1, 1)
     mod <- rbind(mod, d)
   }
 
@@ -43,7 +43,7 @@ resCalc <- function(p, meas, fixed){
   mod$date <- as.POSIXct(paste(mod$year, mod$doy), format = '%Y %j')
 
   # Merge measured and calculated
-  dat <- merge(meas[, c('site.short', 'date', 'temp')], mod[, c('site.short', 'date', 'slurry_temp')], by = c('site.short', 'date'))
+  dat <- merge(meas[, c('site', 'date', 'temp')], mod[, c('site', 'date', 'slurry_temp')], by = c('site', 'date'))
   nddat <<- dat
 
   res <- dat$slurry_temp - dat$temp

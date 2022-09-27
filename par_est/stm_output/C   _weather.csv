@@ -1,6 +1,6 @@
- Day of sim.,Day of year,Year,Air T,Radiation
- ,,,(deg. C),(W/m2)
- day,doy,year,air_temp,rad
+Day of sim.,Day of year,Year,Air T,Radiation
+,,,(deg. C),(W/m2)
+day,doy,year,air_temp,rad
    1,  1,   1,           1.00,          10.40
    2,  2,   1,           0.90,          10.40
    3,  3,   1,          -0.60,          10.40

@@ -1,6 +1,6 @@
- Day of sim.,Day of year,Year,Radiation,Generation,Air,Floor,Lower wall,Upper wall,Feed,Total,Total step,          Total step adjusted,Steady state temp,Steady state used
- ,,,(W),(W),(W),(W),(W),(W),(W),(W),(J),(J),,
- day,doy,year,rad,gen,air,floor,lower_wall,upper_wall,feed,total,total_step,total_adjusted,          steady_state_used,steady_state_temp
+Day of sim.,Day of year,Year,Radiation,Generation,Air,Floor,Lower wall,Upper wall,Feed,Total,Total step,          Total step adjusted,Steady state temp,Steady state used
+,,,(W),(W),(W),(W),(W),(W),(W),(W),(J),(J),,
+day,doy,year,rad,gen,air,floor,lower_wall,upper_wall,feed,total,total_step,total_adjusted,          steady_state_used,steady_state_temp
    1,  1,   1,    -94.477,     -0.000,  15036.735,   2242.102,    352.167,      0.000,             0.,         17699.,      63718080.,      63718080., 2.36,    F
    2,  2,   1,   -127.253,     -0.000,  14291.659,   2171.778,    340.445,     18.502,             0.,         16841.,      60626396.,      60626396., 5.89,    F
    3,  3,   1,    -65.835,     -0.000,  15467.614,   2097.404,    327.498,     40.050,             0.,         18021.,      64876932.,      64876932., 5.05,    F

@@ -1,9 +1,9 @@
 # Run STM with final parameters
 
-system('./stm Back ../final_pars/pars.txt ../pars/Back_u_pars.txt ../weather/Backa_weather.csv ../level/Back_level.txt &
-        ./stm Fitt ../final_pars/pars.txt ../pars/Fitt_u_pars.txt ../weather/Backa_weather.csv ../level/Fitt_level.txt &
-        ./stm Lind ../final_pars/pars.txt ../pars/Lind_u_pars.txt ../weather/Backa_weather.csv ../level/Raan_level.txt
-        ./stm Raan ../final_pars/pars.txt ../pars/Raan_u_pars.txt ../weather/Uppsala_weather.csv ../level/Raan_level.txt
+system('./stm A ../final_pars/pars.txt ../pars/A_user_pars.txt ../weather/Backa_weather.csv ../level/A_level.txt &
+        ./stm B ../final_pars/pars.txt ../pars/B_user_pars.txt ../weather/Backa_weather.csv ../level/B_level.txt &
+        ./stm C ../final_pars/pars.txt ../pars/C_user_pars.txt ../weather/Backa_weather.csv ../level/C_level.txt
+        ./stm D ../final_pars/pars.txt ../pars/D_user_pars.txt ../weather/Uppsala_weather.csv ../level/D_level.txt
        ')
 
 # Move output

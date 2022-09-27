@@ -1,0 +1,12 @@
+Starting STM model . . . 
+STM version 0.4, 15 July 2022
+Date and time: 2022/09/26 23:50:16
+
+Simulation ID: C   
+User par file: ../pars/C_user_pars.txt       
+Par file: ../final_pars/pars.txt        
+Weather file: ../weather/Backa_weather.csv  
+Level file: ../level/C_level.txt          
+
+Done!
+Run time:    0.0380  seconds
