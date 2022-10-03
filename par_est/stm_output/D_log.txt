@@ -1,12 +1,12 @@
 Starting STM model . . . 
-STM version 0.4, 15 July 2022
-Date and time: 2022/09/26 23:50:16
+STM version 0.5, 27 September 2022
+Date and time: 2022/10/03 15:36:32
 
-Simulation ID: D   
+Simulation ID: D
 User par file: ../pars/D_user_pars.txt       
 Par file: ../final_pars/pars.txt        
 Weather file: ../weather/Uppsala_weather.csv
 Level file: ../level/D_level.txt          
 
 Done!
-Run time:    0.0280  seconds
+Run time:    0.0260  seconds
