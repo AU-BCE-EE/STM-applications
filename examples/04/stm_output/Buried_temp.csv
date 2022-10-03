@@ -1,6 +1,6 @@
- Day of sim.,Day of year,Year,Slurry mass,Frozen mass,Slurry depth,Air T,Wall T,Floor T,Slurry T
- ,,,(Mg = 1000 kg),(Mg = 1000 kg),(m),(deg. C),(deg. C),(deg. C),(deg. C)
- day,doy,year,slurry_mass,frozen_mass,slurry_depth,air_temp,wall_temp,floor_temp,slurry_temp
+Day of sim.,Day of year,Year,Slurry mass,Frozen mass,Slurry depth,Air T,Wall T,Floor T,Slurry T
+,,,(Mg = 1000 kg),(Mg = 1000 kg),(m),(deg. C),(deg. C),(deg. C),(deg. C)
+day,doy,year,slurry_mass,frozen_mass,slurry_depth,air_temp,wall_temp,floor_temp,slurry_temp
    1,  1,   1, 1020.00,    0.00,    0.13,   -4.92,    0.38,    8.29,   14.46
    2,  2,   1, 1040.00,    0.00,    0.13,   -4.94,    0.23,    8.15,   13.50
    3,  3,   1, 1060.00,    0.00,    0.13,   -4.96,    0.09,    8.01,   12.63

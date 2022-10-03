@@ -2,12 +2,13 @@
 # Model results
 dat <- data.frame()
 ff <- list.files('../stm_output', pattern = 'temp.csv')
+i <- ff[1]
 for (i in ff) {
   d <- read.csv(paste0('../stm_output/', i), skip = 2)
   names(d) <- c('dos', 'doy', 'year', 'mass.slurry', 'mass.frozen', 
                 'depth.slurry', 'temp.air', 'temp.wall', 'temp.floor', 
                 'temp.slurry')
-  d$sim <- gsub(' ', '', substr(i, 1, 4))
+  d$sim <- strsplit(i, '_')[[1]][1] 
   dat <- rbind(dat, d)
 }
 

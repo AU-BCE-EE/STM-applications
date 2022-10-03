@@ -7,13 +7,13 @@ rm plots/*.*
 sim_start_time="$SECONDS"
 
 # Run all simulations in parallel
-./stm Ref. pars/pars.txt pars/user_pars1.txt &
-./stm Bur. pars/pars.txt pars/user_pars2.txt &
-./stm Ott. pars/pars.txt pars/user_pars3.txt &
-./stm Abs. pars/pars4.txt pars/user_pars1.txt &
+./stm Reference pars/pars.txt pars/user_pars1.txt &
+./stm Buried pars/pars.txt pars/user_pars2.txt &
+./stm Ottawa pars/pars.txt pars/user_pars3.txt &
+./stm Absorptiv. pars/pars4.txt pars/user_pars1.txt &
 ./stm Heat pars/pars5.txt pars/user_pars1.txt &
-./stm Emp. pars/pars.txt pars/user_pars6.txt &
-./stm Dup.  pars/pars.txt pars/user_pars7.txt 
+./stm Emptying pars/pars.txt pars/user_pars6.txt &
+./stm Duplin pars/pars.txt pars/user_pars7.txt 
 
 sim_end_time="$SECONDS"
 

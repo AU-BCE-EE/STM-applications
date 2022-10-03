@@ -1,4 +1,5 @@
 # Plots measured and calculated temperatures
+# Also applies ABM model to 2 scenarios
 
 rm(list = ls())
 

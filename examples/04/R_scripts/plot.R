@@ -1,10 +1,10 @@
 
 dat$date <- date(dat$date)
-dat$sim <- relevel(factor(dat$sim), ref = 'Ref.')
-d <- subset(dat, !sim %in% c('Ott.', 'Dup.'))
+dat$sim <- relevel(factor(dat$sim), ref = 'Reference')
+d <- subset(dat, !sim %in% c('Ottawa', 'Duplin'))
 
 ggplot(d, aes(date, temp.slurry, colour = factor(sim))) +
-  geom_line(data = subset(dat, sim == 'Ref.'), aes(y = temp.air), colour = 'skyblue', alpha = 0.7, lty = 2) +
+  geom_line(data = subset(dat, sim == 'Reference'), aes(y = temp.air), colour = 'skyblue', alpha = 0.7, lty = 2) +
   geom_line() +
   labs(x = 'Date (month)', y = expression('Temperature'~(degree*C)), 
        colour = '') +
@@ -26,10 +26,10 @@ ggplot(dat, aes(date, mass.slurry, colour = factor(sim))) +
   theme(legend.position = 'top')
 ggsave('../plots/ex4_slurry_mass_date.pdf', height = 3, width = 3)
 
-dd <- subset(dat, sim %in% c('Ref.', 'Emp.'))
+dd <- subset(dat, sim %in% c('Reference', 'Emptying'))
 dd$sim <- as.character(dd$sim)
-dd$sim[dd$sim == 'Ref.'] <- 'All others'
-dd$sim <- factor(dd$sim, levels = c('Emp.', 'All others'))
+dd$sim[dd$sim == 'Reference'] <- 'All others'
+dd$sim <- factor(dd$sim, levels = c('Emptying', 'All others'))
 ggplot(dd, aes(date, depth.slurry, colour = sim, lty = sim)) +
   geom_line() +
   scale_color_brewer(palette = 'Dark2') +
@@ -40,7 +40,7 @@ ggplot(dd, aes(date, depth.slurry, colour = sim, lty = sim)) +
   theme(legend.position = 'top')
 ggsave('../plots/ex4_slurry_depth_date.pdf', height = 2.6, width = 3)
 
-d <- subset(dat, sim %in% c('Ref.', 'Ott.', 'Dup.'))
+d <- subset(dat, sim %in% c('Reference', 'Ottawa', 'Duplin'))
 tp <- ggplot(d, aes(date, temp.slurry, colour = factor(sim))) +
   geom_line(aes(y = temp.air), alpha = 0.4, lty = '1111') +
   geom_line() +
@@ -52,7 +52,7 @@ tp <- ggplot(d, aes(date, temp.slurry, colour = factor(sim))) +
   theme(legend.position = 'top')
 ggsave('../plots/ex4_ave_stor_temp_date_loc.pdf', tp, height = 3.4, width = 3)
 
-d <- subset(dat, sim %in% c('Ref.', 'Ott.', 'Dup.'))
+d <- subset(dat, sim %in% c('Reference', 'Ottawa', 'Duplin'))
 mp <- ggplot(d, aes(date, CH4_emis_rate/1000, colour = factor(sim))) +
   geom_line() +
   labs(x = 'Date (month)', y = expression(CH[4]~'emission'~(kg~d^'-1')), 
@@ -68,7 +68,7 @@ mat <- matrix(c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 cp <- grid.arrange(tp, mp, layout_matrix = mat)
 ggsave('../plots/ex4_temp_CH4_date_loc.pdf', cp, height = 6, width = 3)
 
-d <- subset(dat, sim %in% c('Ref.', 'Ott.', 'Dup.'))
+d <- subset(dat, sim %in% c('Reference', 'Ottawa', 'Duplin'))
 ggplot(d, aes(date, CH4_emis_cum/1E6, colour = factor(sim))) +
   geom_line(lty = '2121') +
   labs(x = 'Date (month)', y = expression(CH[4]~'emission'~(Mg)), 
