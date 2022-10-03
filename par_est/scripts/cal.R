@@ -6,6 +6,11 @@ p <- c(Rslur = 0.7, Rsoil = 1.0, absorp = 0.02, soilDamp = 3)
 
 # Finally, parameter estimation
 m <- optim(par = p, fn = function(par) resCalc(p = par, meas = meas, fixed = fixed), method = 'Nelder-Mead')
-m
+
+sink('../logs/optim_log.txt')
+  print(m)
+sink()
+
+
 
 
