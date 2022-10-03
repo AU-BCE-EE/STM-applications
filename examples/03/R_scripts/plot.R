@@ -44,7 +44,7 @@ ggsave('../plots/ex3_slurry_depth_doy.pdf', height = 2.1, width = 5)
 
 ggplot(rl, aes(doy, value/1000, colour = variable)) +
   geom_line(alpha = 0.7) +
-  facet_wrap(~ site, scales = 'free') +
+  facet_wrap(~ site.nm, scales = 'free') +
   labs(x = 'Day of year', y = expression('Heat flow out'~(kW)), colour = '') +
   scale_color_brewer(palette = 'Dark2') +
   theme_bw() +

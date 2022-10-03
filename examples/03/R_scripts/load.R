@@ -22,7 +22,7 @@ rates <- data.frame()
 ff <- list.files('../stm_output', pattern = 'rates.csv')
 for (i in ff) {
   d <- read.csv(paste0('../stm_output/', i), skip = 2, header = TRUE)
-  d$site <- substr(i, 1, 4)
+  d$site <- substr(i, 1, 1)
   rates <- rbind(rates, d)
 }
 
