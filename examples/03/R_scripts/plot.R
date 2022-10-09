@@ -2,6 +2,7 @@
 # Can eliminate by dropping temp == NA
 # Problem seems to be multiple obs for same doy, some with NA
 
+dat$site.nm <- factor(dat$site, levels = c('C', 'E'), labels = c('Sweden (C)', 'Denmark (E)'))
 dl$site.nm <- factor(dl$site, levels = c('C', 'E'), labels = c('Sweden (C)', 'Denmark (E)'))
 rl$site.nm <- factor(rl$site, levels = c('C', 'E'), labels = c('Sweden (C)', 'Denmark (E)'))
 
@@ -35,7 +36,7 @@ ggsave('../plots/ex3_ave_stor_temp_doy_floor.pdf', height = 3, width = 5)
 
 ggplot(dat, aes(doy, slurry_depth)) +
   geom_line() +
-  facet_wrap(~ site) +
+  facet_wrap(~ site.nm) +
   labs(x = 'Day of year', y = 'Slurry depth (m)', 
        colour = 'Position (from surface)') +
   theme_bw() +

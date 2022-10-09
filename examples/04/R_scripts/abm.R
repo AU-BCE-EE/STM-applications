@@ -11,7 +11,7 @@ for (i in unique(dat$sim)) {
   # Remove duplicate times from emptying events
   out <- out[!duplicated(out$time), ]
   dat[dat$sim == i, 'CH4_emis_rate'] <- out$CH4_emis_rate
-  dat[dat$sim == i, 'CH4_emis_cum'] <- out$CH4_emis_cum
+  dat[dat$sim == i, 'CH4_emis_cum'] <- out$CH4_emis_cum - out$CH4_emis_cum[1]
 }
 
 dat.cum <- dat[dat$doy == 365, c('sim', 'date', 'mass.slurry', 'CH4_emis_cum')]

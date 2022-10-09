@@ -4,6 +4,7 @@
 rm(list = ls())
 
 source('packages.R')
+source('functions.R')
 source('load.R')
 source('abm.R')
 source('export.R')
