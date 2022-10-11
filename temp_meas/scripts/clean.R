@@ -17,6 +17,9 @@ dat[, depth.max := max(depth), site]
 # Subset to min and max depths
 dat <- subset(dat, depth == depth.min | depth == depth.max)
 
+# Remove what are apparently air or sensor-in-sun temperatures from early site C measurements
+dat <- subset(dat, site != 'C' | as.Date(date) > as.Date('2020-06-18'))
+
 # Average measured temperature
 dat.mean <- aggregate(temp ~ site + date, data = dat, FUN = mean)
 
