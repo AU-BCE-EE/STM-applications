@@ -1,4 +1,4 @@
-Parameter values for STM heat transfer model
+Parameter values for STM heat transfer model - version parVer
 Slurry physical constants
               Liquid         Frozen
   Density  specific heat  specific heat  Heat of fusion 
@@ -6,7 +6,7 @@ Slurry physical constants
    1000        4200           2100          333550
 Heat transfer resistance terms (K-m2/W)
   Air    Concrete   Slurry   Soil
-  Rair   Rconc     Rslur    Rsoil 
+  Rair     Rconc      Rslur    Rsoil 
 Other parameters
  Absorptivity  Soil damping depth   Heat generation
     (-)              (m)              (W/m3)

@@ -18,8 +18,8 @@ resCalc <- function(p, meas, fixed){
   # Run model
   cat('. ')
   system('./stm A ../pars/pars.txt ../pars/A_user_pars.txt ../weather/Backa_weather.csv ../level/A_level.txt &
-          ./stm B ../pars/pars.txt ../pars/B_user_pars.txt ../weather/Backa_weather.csv ../level/B_level.txt &
-          ./stm D ../pars/pars.txt ../pars/D_user_pars.txt ../weather/Uppsala_weather.csv ../level/D_level.txt
+          ./stm B ../pars/pars.txt ../pars/B_user_pars.txt ../weather/Uppsala_weather.csv ../level/B_level.txt &
+          ./stm D ../pars/pars.txt ../pars/D_user_pars.txt ../weather/Backa_weather.csv ../level/D_level.txt
          ')
 
   # Move output
