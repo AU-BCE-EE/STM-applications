@@ -5,16 +5,18 @@ echo "Running STM example 4 . . ."
 echo ""
 
 REM Remove old results
-del /Q stm_output\*.*
+del \Q stm_output\*.*
 
 REM Run all simulations
-stm.exe Ref. pars/pars.txt pars/user_pars1.txt &
-stm.exe Bur. pars/pars.txt pars/user_pars2.txt &
-stm.exe Ott. pars/pars.txt pars/user_pars3.txt &
-stm.exe Abs. pars/pars4.txt pars/user_pars1.txt &
-stm.exe Heat pars/pars5.txt pars/user_pars1.txt &
-stm.exe Emp. pars/pars.txt pars/user_pars6.txt &
-stm.exe Dup.  pars/pars.txt pars/user_pars7.txt 
+stm.exe Ref. pars\pars.txt pars\user_pars1.txt
+stm.exe Ottawa pars\pars.txt pars\user_pars3.txt
+stm.exe Absorp. pars\pars4.txt pars\user_pars1.txt
+stm.exe Heat pars\pars5.txt pars\user_pars1.txt
+stm.exe Empty2x pars\pars.txt pars\user_pars6.txt
+stm.exe Duplin pars\pars.txt pars\user_pars7.txt 
+stm.exe Above pars\pars.txt pars\user_pars8.txt 
+stm.exe Small pars\pars.txt pars\user_pars9.txt 
+stm.exe Buried pars\pars.txt pars\user_pars2.txt 
 
 REM Move output
 move *_temp.csv* stm_output >nul
