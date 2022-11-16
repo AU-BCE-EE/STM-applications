@@ -8,8 +8,8 @@ REM Remove old results
 del /Q stm_output\*.*
 
 REM Run both simulations
-stm.exe Raan pars\pars.txt pars\Raan_u_pars.txt weather\Uppsala_weather.txt level\Raan_level.txt
-stm.exe Tjel pars\pars.txt pars\Tjel_u_pars.txt weather\Tjele_weather.txt level\Tjel_level.txt 
+stm.exe C pars\pars.txt pars\C_user_pars.txt weather\Backa_weather.csv level\C_level.txt
+stm.exe E pars\pars.txt pars\E_user_pars.txt weather\Tjele_weather.txt level\E_level.txt 
 
 REM Move output
 move *_temp.csv* stm_output >nul
