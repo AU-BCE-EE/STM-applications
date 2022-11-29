@@ -1,13 +1,13 @@
 $par
      Rslur      Rsoil     absorp   soilDamp 
-0.63697696 2.23019417 0.01104204 2.03818122 
+0.66328176 0.36515216 0.02687307 3.56488154 
 
 $value
-[1] 1882.19
+[1] 1489.59
 
 $counts
 function gradient 
-     207       NA 
+     165       NA 
 
 $convergence
 [1] 0
