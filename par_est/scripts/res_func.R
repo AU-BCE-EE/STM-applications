@@ -48,6 +48,7 @@ resCalc <- function(p, meas, fixed){
 
   res <- dat$slurry_temp - dat$temp
   obj <- sum(abs(res))
+  cat(signif(obj, 4), ' ')
 
   return(obj)
 }
