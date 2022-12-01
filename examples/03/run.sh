@@ -9,6 +9,7 @@ sim_start_time="$SECONDS"
 # Run all simulations in parallel
 ./stm C pars/pars.txt pars/C_user_pars.txt weather/Backa_weather.csv level/C_level.txt &
 ./stm E pars/pars.txt pars/E_user_pars.txt weather/Tjele_weather.txt level/E_level.txt 
+./stm F pars/pars.txt pars/F_user_pars.txt weather/F_weather.csv level/F_level.csv 
 
 sim_end_time="$SECONDS"
 

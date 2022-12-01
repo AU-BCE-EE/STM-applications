@@ -1,6 +1,11 @@
 
 # Measurements
 meas <- read.csv('../meas_temp/daily_meas_temp.csv')
+
+f <- read.csv('../meas_temp/F_meas_temp.csv', colClasses = c('character', 'character', 'numeric'))[, 1:3]
+
+meas <- rbind(meas, f)
+
 meas$date <- as.POSIXct(meas$date)
 
 # Model results

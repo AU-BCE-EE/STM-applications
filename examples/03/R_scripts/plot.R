@@ -2,9 +2,9 @@
 # Can eliminate by dropping temp == NA
 # Problem seems to be multiple obs for same doy, some with NA
 
-dat$site.nm <- factor(dat$site, levels = c('C', 'E'), labels = c('Sweden (C)', 'Denmark (E)'))
-dl$site.nm <- factor(dl$site, levels = c('C', 'E'), labels = c('Sweden (C)', 'Denmark (E)'))
-rl$site.nm <- factor(rl$site, levels = c('C', 'E'), labels = c('Sweden (C)', 'Denmark (E)'))
+dat$site.nm <- factor(dat$site, levels = c('C', 'E', 'F'), labels = c('Sweden (C)', 'Denmark (E)', 'Canada (F)'))
+dl$site.nm <- factor(dl$site, levels = c('C', 'E', 'F'), labels = c('Sweden (C)', 'Denmark (E)', 'Canada (F)'))
+rl$site.nm <- factor(rl$site, levels = c('C', 'E', 'F'), labels = c('Sweden (C)', 'Denmark (E)', 'Canada (F)'))
 
 # Issue is I want the NAs for the missing measurement period spring to summer, but I do not want them where there are other obs with measurements (different year)
 dl <- subset(dl, !is.na(value) | 
