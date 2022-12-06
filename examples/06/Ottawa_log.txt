@@ -1,0 +1,12 @@
+Starting STM model . . . 
+STM version 0.14, 2 December 2022
+Date and time: 2022/12/05 15:00:57
+
+Simulation ID: Ottawa
+User par file: user_pars.txt                 
+Par file: pars.txt                      
+Weather file: weather.csv                   
+Level file: level.csv                     
+
+Done!
+Run time:    0.0320  seconds
