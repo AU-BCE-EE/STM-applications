@@ -5,7 +5,7 @@ echo "Running STM example 4 . . ."
 echo ""
 
 REM Remove old results
-del \Q stm_output\*.*
+del stm_output\*.*
 
 REM Run all simulations
 stm.exe Ref. pars\pars.txt pars\user_pars1.txt
