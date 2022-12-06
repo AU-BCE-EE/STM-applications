@@ -1,6 +1,6 @@
 Starting STM model . . . 
-STM version 0.9, 28 November 2022
-Date and time: 2022/11/29 11:05:13
+STM version 0.15, 5 December 2022
+Date and time: 2022/12/06 13:28:54
 
 Simulation ID: Ex01
 User par file: user_pars.txt                 

@@ -1,12 +1,12 @@
 Starting STM model . . . 
-STM version 0.4, 15 July 2022
-Date and time: 2022/07/15 13:54:02
+STM version 0.15, 5 December 2022
+Date and time: 2022/12/06 13:28:54
 
 Simulation ID: Ex02
 User par file: user_pars.txt                 
 Par file: pars.txt                      
 Weather is calculated (no input file)
 Slurry level is calculated (no input file)
- 
+
 Done!
-Run time:    0.0160  seconds
+Run time:    0.0190  seconds
