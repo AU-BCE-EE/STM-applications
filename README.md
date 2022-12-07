@@ -2,6 +2,10 @@
 Applications, examples, and parameters for STM, a simple heat transfer model for predicting the temperature of stored animal slurry or similar materials.
 See [the STM repo](https://github.com/sashahafner/STM) for source code and more info on the model/program itself.
 
+# Maintainer
+Sasha D. Hafner developed and maintains this repo.
+Find contact information for questions etc. here: <https://pure.au.dk/portal/en/persons/sasha-d-hafner(1a9c8309-91c7-44b3-8de9-da66643f7902).html>.
+
 # Getting started
 First, install STM by following the instructions under "Installation" in the [STM repo README file](https://github.com/sashahafner/STM#readme).
 New STM users interested in learning how to use the program should copy this entire STM-applications repository.
@@ -19,7 +23,13 @@ The first two examples are quite simple, and for them, STM is called directly fr
 Examples 3 and 4 are more complicated, with simulation of multiple locations or scenarios and the use of R for plotting results. 
 These examples include batch files (for Windows) and shell scripts (for Linux) for calling STM, moving files, and calling R scripts.
 These two examples should provide some ideas for more complicated workflows.
-See the `README.md` files in each subdirectory for more detailed instructions.
+See the `README.md` files in each subdirectory for more detailed instructions, as well as information on data sources.
+
+The script `examples/run_examples.sh` can be used on Linux to:
+
+* update all copies of `pars.txt` with the latest version from GitHub (from *main* branch),
+* download and compile the latest version of the program source code (*main* branch), and
+* run all examples
 
 # `par_calc`
 This directory contains a single xlsx file that can be used for calculating parameter values.
@@ -29,13 +39,13 @@ However, the default parameters available in `par_sets` are probably the best ch
 Scripts for parameter estimation based on fitting to measurements made at 3 sites in Sweden.
 
 # `par_sets`
-If you are here for just the latest version of the default parameter file, you can find it here.
+If you are here for just the latest version of the default parameter file, this directory is the place to look.
 For information on how these values were determined, see the `par_est` directory.
-The file `pars.txt` will contain the latest parameter set, while earlier versions can be identified by the version number in the file names.
+The file `pars.txt` will contain the latest parameter set, while the latest (a copy) and earlier versions can be identified by the version number in the file names.
 
 # Bugs and more
 If you find a problem in this repo (e.g., examples don't work or you see a mistake) please create an [issue](https://github.com/sashahafner/STM-applications/issues).
 Some anticipated issues are listed below.
 
-* Missing stm.exe on Windows. Windows anti-virus software may delete stm.exe as soon as it is downloaded simply because it is an executable. 
+* Missing stm.exe on Windows. Windows anti-virus software may delete stm.exe as soon as it is downloaded from the STM repo simply because it is an executable. 
 * Missing R or R packages. The plots in examples 3 and 4 will not be created unless R and all required packages are installed (see `examples/*/R_scripts/packages.R`) and the `Rscript` command works.
