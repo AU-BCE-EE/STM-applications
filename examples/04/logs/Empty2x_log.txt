@@ -1,6 +1,6 @@
 Starting STM model . . . 
-STM version 0.15, 5 December 2022
-Date and time: 2022/12/06 13:28:57
+STM version 0.16, 6 December 2022
+Date and time: 2022/12/09 12:47:30
 
 Simulation ID: Empty2x
 User par file: pars/user_pars6.txt           

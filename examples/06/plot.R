@@ -2,8 +2,6 @@
 
 library(ggplot2)
 
-head(meas)
-
 meas <- read.csv('measured_slurry_temp.csv')
 nh <- read.csv('noheat_temp.csv', skip = 2)
 c10 <- read.csv('constant10_temp.csv', skip = 2)

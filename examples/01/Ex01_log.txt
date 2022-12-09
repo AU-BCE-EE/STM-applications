@@ -1,6 +1,6 @@
 Starting STM model . . . 
-STM version 0.15, 5 December 2022
-Date and time: 2022/12/06 13:28:54
+STM version 0.16, 6 December 2022
+Date and time: 2022/12/09 12:47:27
 
 Simulation ID: Ex01
 User par file: user_pars.txt                 
@@ -10,4 +10,4 @@ Level file: level.txt
 
  Warning: Day of year > 365 found in weather file, and will be ignored.
 Done!
-Run time:    0.0200  seconds
+Run time:    0.0190  seconds

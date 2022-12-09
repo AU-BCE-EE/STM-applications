@@ -9,12 +9,13 @@ cp pars.txt 02/pars.txt
 cp pars.txt 03/pars/pars.txt
 cp pars.txt 04/pars/pars.txt
 cp pars.txt 05/pars/pars.txt
+cp pars.txt 06/pars.txt
 
 # Remove original
 rm pars.txt
 
 # Get STM source code
-wget https://raw.githubusercontent.com/sashahafner/STM/master/src/stm.f90
+wget https://raw.githubusercontent.com/AU-BCE-EE/STM/master/src/stm.f90
 
 # Compile stm.f90 to stm
 gfortran stm.f90 -o stm
@@ -28,22 +29,36 @@ sudo chmod +x stm
 # Copy in stm 
 cp stm 01/
 cp stm 02/
-cp stm 01/
+cp stm 03/
 cp stm 04/
 cp stm 05/
+cp stm 06/
 
 # And remove it
 rm stm
 
 cd 01
+echo 'Example 01'
 ./stm Ex01 pars.txt user_pars.txt weather.txt level.txt
+echo ''
 cd ../02
+echo 'Example 02'
 ./stm Ex02 pars.txt user_pars.txt
+echo ''
 cd ../03
+echo 'Example 03'
 ./run.sh
+echo ''
 cd ../04
+echo 'Example 04'
 ./run.sh
+echo ''
 cd ../05
+echo 'Example 05'
+./run.sh
+echo ''
+cd ../06
+echo 'Example 06'
 ./run.sh
 cd ..
 
