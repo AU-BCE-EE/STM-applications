@@ -5,6 +5,7 @@ resCalc <- function(p, meas, fixed){
 
   # Cheap fix for negative parameter values
   p <- abs(p)
+  cat(signif(p, 4), ': ')
   if (!missing(fixed)) {
     p <- c(p, fixed)
   }
@@ -16,7 +17,6 @@ resCalc <- function(p, meas, fixed){
   }
 
   # Run model
-  cat('. ')
   system('./stm A ../pars/pars.txt ../pars/A_user_pars.txt ../weather/Backa_weather.csv ../level/A_level.txt &
           ./stm B ../pars/pars.txt ../pars/B_user_pars.txt ../weather/Uppsala_weather.csv ../level/B_level.txt &
           ./stm D ../pars/pars.txt ../pars/D_user_pars.txt ../weather/Backa_weather.csv ../level/D_level.txt
@@ -47,8 +47,11 @@ resCalc <- function(p, meas, fixed){
   nddat <<- dat
 
   res <- dat$slurry_temp - dat$temp
-  obj <- sum(abs(res))
-  cat(signif(obj, 4), ' ')
+  #obj <- sum(abs(res))
+  obj <- sum(res^2)
+
+  #if (obj < 1300) browser()
+  cat(signif(obj, 6), '\n')
 
   return(obj)
 }
