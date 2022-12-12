@@ -6,6 +6,10 @@ These temperature measurements were made at Aarhus University Research Center Fo
 Animal slurry from several different types of animals was added to 1 m$^3$ plastic tanks in a single event (no additions after the initial filling event). 
 The experiment was carried out by Anna Støckler at Aarhus University (<https://pure.au.dk/portal/en/persons/anna-joost-stoeckler(79434e7b-d9f3-4999-bbc2-3f2e0ef92384).html>).
 
+# Tanks
+Tanks were cubic plastic with a steel frame for support.
+Tops were covered, and sides were wrapped with insulation, both of which complicate inputs in `user_pars.txt`.
+
 # Directory and file information
 ## `logs`
 STM output logs.

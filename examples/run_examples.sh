@@ -50,7 +50,7 @@ echo 'Example 03'
 ./run.sh
 echo ''
 cd ../04
-echo 'Example 04'
+echo 'Example 04 (slow one because of ABM)'
 ./run.sh
 echo ''
 cd ../05

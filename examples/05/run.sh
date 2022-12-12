@@ -2,12 +2,13 @@
 
 # Remove old results
 rm stm_output/*.*
-rm plots/*.*
+#rm plots/*.*
 
 sim_start_time="$SECONDS"
 
 # Run simulation
-./stm G pars_plastic.txt user_pars.txt weather.csv
+./stm small pars_small_tanks.txt user_pars.txt weather.csv
+./stm def pars.txt user_pars.txt weather.csv
 
 sim_end_time="$SECONDS"
 

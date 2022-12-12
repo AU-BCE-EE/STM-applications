@@ -8,7 +8,7 @@ Settings for STM heat transfer model
 1.0       Dimension 2 of tank (width or set to 0 for circular tanks) (m)
 1.0       Effective slurry-to-air convection area (m2) (usually simply upper exposed area)
 1.0       Effective area exposed to solar radiation (m2)
-0.6       Initial volume of slurry (m3) (ignored if using level file)
+0.5       Initial volume of slurry (m3) (ignored if using level file)
 15        Initial slurry temperature (degrees C)
 None      Added slurry temperature description, Constant = fixed temperature, None = no heat
 NA        Temperature of added slurry (degrees C)
