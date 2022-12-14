@@ -1,0 +1,12 @@
+Starting STM model . . . 
+STM version 0.16, 6 December 2022
+Date and time: 2022/12/14 09:29:49
+
+Simulation ID: 4m
+User par file: pars/user_pars4.txt           
+Par file: pars/pars.txt                 
+Weather is calculated (no input file)
+Slurry level is calculated (no input file)
+
+Done!
+Run time:    0.0240  seconds
