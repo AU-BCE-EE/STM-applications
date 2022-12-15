@@ -1,6 +1,6 @@
 
 dat$date <- date(dat$date)
-dat$sim <- relevel(factor(dat$sim), ref = '0.1m')
+dat$sim <- relevel(factor(dat$sim), ref = '0.5m')
 
 ggplot(dat, aes(date, temp.slurry, colour = factor(sim))) +
   geom_line(data = subset(dat, sim == '1m'), aes(y = temp.air), colour = 'skyblue', alpha = 0.7, lty = 2) +

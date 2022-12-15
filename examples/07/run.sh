@@ -7,7 +7,8 @@ rm plots/*.*
 sim_start_time="$SECONDS"
 
 # Run all simulations in parallel
-./stm 0.1m pars/pars.txt pars/user_pars01.txt &
+./stm 0.5m pars/pars.txt pars/user_pars0.5.txt &
+./stm 0.5mr pars/pars_rad.txt pars/user_pars0.5.txt &
 ./stm 1m pars/pars.txt pars/user_pars1.txt &
 ./stm 2m pars/pars.txt pars/user_pars2.txt &
 ./stm 3m pars/pars.txt pars/user_pars3.txt &
