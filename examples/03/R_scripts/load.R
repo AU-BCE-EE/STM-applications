@@ -33,3 +33,8 @@ rl <- melt(rates, id.vars = c('day', 'doy', 'year', 'site'),
 rl$variable <- factor(rl$variable, levels = c('total', 'air', 'rad', 'upper_wall', 'lower_wall', 'floor'),
                                    labels = c('Total', 'Air', 'Radiation', 'Upper wall', 'Lower wall', 'Floor'))
 
+wthr <- read.csv('../stm_output/C_weather.csv', skip = 2)
+
+wthr$year <- 2017 + wthr$year
+wthr$date <- as.POSIXct(paste(wthr$year, wthr$doy), format = '%Y %j')
+wthr <- subset(wthr, year > 2019)

@@ -1,0 +1,12 @@
+Starting STM model . . . 
+STM version 0.19, 16 January 2023
+Date and time: 2023/01/16 18:31:29
+
+Simulation ID: constant25
+User par file: pars/user_pars_constant25.txt 
+Par file: pars/pars.txt                 
+Weather file: weather/weather.csv           
+Level file: level.csv                     
+
+Done!
+Run time:    0.0300  seconds

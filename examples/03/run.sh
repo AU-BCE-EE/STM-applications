@@ -17,6 +17,7 @@ mv *_temp.csv* stm_output
 mv *_weather* stm_output
 mv *_rates* stm_output
 mv *_log* logs
+mv *_summary* stm_output
 
 # Run R scripts
 cd R_scripts

@@ -51,3 +51,10 @@ ggplot(rl, aes(doy, value/1000, colour = variable)) +
   theme_bw() +
   theme(legend.position = 'top') 
 ggsave('../plots/ex3_heat_flow.pdf', height = 3, width = 5)
+
+ggplot(wthr, aes(doy, rad)) +
+  geom_line(alpha = 0.7) +
+  labs(x = 'Day of year', y = expression('Radiation'~(W~m^'-2')), colour = '') +
+  theme_bw() +
+  theme(legend.position = 'top') 
+ggsave('../plots/ex3_radiation.pdf', height = 3, width = 5)

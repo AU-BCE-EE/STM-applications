@@ -1,6 +1,6 @@
 Starting STM model . . . 
-STM version 0.16, 6 December 2022
-Date and time: 2022/12/09 12:48:56
+STM version 0.19, 16 January 2023
+Date and time: 2023/01/16 14:00:51
 
 Simulation ID: constant10
 User par file: user_pars_constant10.txt      
@@ -9,4 +9,4 @@ Weather file: weather.csv
 Level file: level.csv                     
 
 Done!
-Run time:    0.0270  seconds
+Run time:    0.0330  seconds
