@@ -1,2 +1,2 @@
 
-write.csv(summ, '../output/fit.csv', row.names = FALSE)
+write.csv(fitsumm, '../output/fit.csv', row.names = FALSE)

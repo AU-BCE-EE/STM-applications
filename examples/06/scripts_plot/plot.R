@@ -11,6 +11,7 @@ ggplot(wthr, aes(date, rad)) +
 ggsave('../plots/ex6_rad_date.pdf', height = 3, width = 5)
 
 ggplot(dl, aes(doy, value, colour = variable)) +
+  geom_line(data = wthr, aes(doy, air_temp), col = 'gray85', lwd = 1.5) +
   geom_line(aes(lty = Type)) +
   labs(x = 'Day of year', y = expression('Slurry temperature'~(degree*C)), 
        colour = '', lty = '') +
@@ -21,7 +22,7 @@ ggplot(dl, aes(doy, value, colour = variable)) +
 ggsave('../plots/ex6_ave_stor_temp_doy.pdf', height = 3, width = 5)
 
 ggplot(dl, aes(date, value, colour = variable)) +
-  geom_line(data = wthr, aes(date, air_temp), col = 'gray85', lwd = 2) +
+  geom_line(data = wthr, aes(date, air_temp), col = 'gray85', lwd = 1.5) +
   geom_line(aes(lty = Type)) +
   labs(x = 'Date', y = expression('Slurry temperature'~(degree*C)), 
        colour = '', lty = '') +

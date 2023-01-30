@@ -2,9 +2,10 @@
 Applications, examples, and parameters for STM, a simple heat transfer model for predicting the temperature of stored animal slurry or similar materials.
 See [the STM repo](https://github.com/sashahafner/STM) for source code and more info on the model/program itself.
 
-# Maintainer
+# Maintainer and contributors
 Sasha D. Hafner developed and maintains this repo.
-Find contact information for questions etc. here: <https://pure.au.dk/portal/en/persons/sasha-d-hafner(1a9c8309-91c7-44b3-8de9-da66643f7902).html>.
+Find contact information for questions etc. here: <https://au.dk/sasha.hafner@bce>.
+Data used in the examples were kindly shared by Anna Holm Støckler, Kristina Mjöfors, Søren O. Petersen, and Chih-Yu Hung.
 
 # Getting started
 First, install STM by following the instructions under "Installation" in the [STM repo README file](https://github.com/sashahafner/STM#readme).
