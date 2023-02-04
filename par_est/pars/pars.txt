@@ -3,11 +3,11 @@ Slurry physical constants
               Liquid         Frozen
   Density  specific heat  specific heat  Heat of fusion 
   (kg/m3)    (J/kg-K)       (J/kg-K)        (J/kg)
-   1000        4200           2100          333550
+   1000        4190           2100          333000
 Heat transfer resistance terms (K-m2/W)
-  Air    Concrete   Slurry   Soil
-  0.02     0.3      0.462876981690173    1.21237876715984 
+  Air    Wall   Floor   Slurry   Soil
+  0.02   0.3     0.3    0.435294127498446    1.37456238882697 
 Other parameters
  Absorptivity  Soil damping depth   Heat generation
     (-)              (m)              (W/m3)
-  0.0176576432717903              2                 0
+  0.0170780084556297              2                 0

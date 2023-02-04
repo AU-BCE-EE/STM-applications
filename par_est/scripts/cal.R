@@ -10,7 +10,8 @@ upper <- c(Rslur = 10, Rsoil = 10, absorp = 0.5)
 resCalc(p = p, meas = meas, fixed = fixed)
 
 # Finally, parameter estimation
-m <- optim(par = p, fn = function(par) resCalc(p = par, meas = meas, fixed = fixed), method = 'L-BFGS-B', lower = lower, upper = upper)
+#m <- optim(par = p, fn = function(par) resCalc(p = par, meas = meas, fixed = fixed), method = 'L-BFGS-B', lower = lower, upper = upper)
+m <- optim(par = p, fn = function(par) resCalc(p = par, meas = meas, fixed = fixed), method = 'L-BFGS-B')
 
 sink('../logs/optim_log.txt')
   print(m)

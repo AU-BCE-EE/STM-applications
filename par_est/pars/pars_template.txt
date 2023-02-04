@@ -5,8 +5,8 @@ Slurry physical constants
   (kg/m3)    (J/kg-K)       (J/kg-K)        (J/kg)
    1000        4190           2100          333000
 Heat transfer resistance terms (K-m2/W)
-  Air    Concrete   Slurry   Soil
-  Rair     Rconc      Rslur    Rsoil 
+  Air    Wall   Floor   Slurry   Soil
+  Rair   Rconc     Rconc    Rslur    Rsoil 
 Other parameters
  Absorptivity  Soil damping depth   Heat generation
     (-)              (m)              (W/m3)

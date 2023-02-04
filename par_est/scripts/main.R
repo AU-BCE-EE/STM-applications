@@ -5,7 +5,7 @@
 rm(list = ls())
 
 # Set parameter set name
-parver <- '0.8'
+parver <- '0.9'
 
 source('remove.R')
 source('packages.R')
