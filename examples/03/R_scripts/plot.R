@@ -5,6 +5,7 @@
 dat$site.nm <- factor(dat$site, levels = c('C', 'E', 'F'), labels = c('Sweden (C)', 'Denmark (E)', 'Canada (F)'))
 dl$site.nm <- factor(dl$site, levels = c('C', 'E', 'F'), labels = c('Sweden (C)', 'Denmark (E)', 'Canada (F)'))
 rl$site.nm <- factor(rl$site, levels = c('C', 'E', 'F'), labels = c('Sweden (C)', 'Denmark (E)', 'Canada (F)'))
+wthr$site.nm <- factor(wthr$site, levels = c('C', 'E', 'F'), labels = c('Sweden (C)', 'Denmark (E)', 'Canada (F)'))
 
 # Issue is I want the NAs for the missing measurement period spring to summer, but I do not want them where there are other obs with measurements (different year)
 dl <- subset(dl, !is.na(value) | 
@@ -54,6 +55,7 @@ ggsave('../plots/ex3_heat_flow.pdf', height = 3, width = 5)
 
 ggplot(wthr, aes(doy, rad)) +
   geom_line(alpha = 0.7) +
+  facet_wrap(~ site.nm) +
   labs(x = 'Day of year', y = expression('Radiation'~(W~m^'-2')), colour = '') +
   theme_bw() +
   theme(legend.position = 'top') 
