@@ -19,13 +19,14 @@ resCalc <- function(p, meas, fixed){
   # Run model
   system('./stm A ../pars/pars.txt ../pars/A_user_pars.txt ../weather/Backa_weather.csv ../level/A_level.txt &
           ./stm B ../pars/pars.txt ../pars/B_user_pars.txt ../weather/Uppsala_weather.csv ../level/B_level.txt &
-          ./stm D ../pars/pars.txt ../pars/D_user_pars.txt ../weather/Backa_weather.csv ../level/D_level.txt
-         ')
+          ./stm D ../pars/pars.txt ../pars/D_user_pars.txt ../weather/Backa_weather.csv ../level/D_level.txt &
+          ./stm F ../pars/pars.txt ../pars/F_user_pars.txt ../weather/Ottawa_weather.csv ../level/F_level.csv')
 
   # Move output
   system('mv *_temp.csv* ../stm_output')
   system('mv *_weather* ../stm_output')
   system('mv *_log* ../stm_output')
+  system('mv *_summary* ../stm_output')
   system('mv *_rates* ../stm_output')
 
   # Read in calculated temperatures
@@ -37,9 +38,11 @@ resCalc <- function(p, meas, fixed){
     mod <- rbind(mod, d)
   }
 
-  # First measurements start in May (Back, Raan) or April (Fitt) 2020
-  mod$year <- 2016 + mod$year
-  # So mod$year of 1 (first year of sim) is 2017, giving about 3.5 year of startup
+  # First measurements start in May (Back, Raan) or April (Fitt) 2020 and end in end of 2021
+  mod$year[mod$site != 'F'] <- 2017 + mod$year[mod$site != 'F']
+  # So mod$year of 1 (first year of sim) is 2018, giving about 2+ year of startup
+  # For Ottawa, first measurements are in August 2015
+  mod$year[mod$site == 'F'] <- 2012 + mod$year[mod$site == 'F']
   mod$date <- as.POSIXct(paste(mod$year, mod$doy), format = '%Y %j')
 
   # Merge measured and calculated

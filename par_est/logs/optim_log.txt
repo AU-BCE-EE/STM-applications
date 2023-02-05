@@ -1,17 +1,17 @@
 $par
      Rslur      Rsoil     absorp 
-0.43529413 1.37456239 0.01707801 
+0.44976936 1.20226615 0.02740676 
 
 $value
-[1] 2394.773
+[1] 5112.277
 
 $counts
 function gradient 
-     322       NA 
+      11       11 
 
 $convergence
-[1] 10
+[1] 0
 
 $message
-NULL
+[1] "CONVERGENCE: REL_REDUCTION_OF_F <= FACTR*EPSMCH"
 

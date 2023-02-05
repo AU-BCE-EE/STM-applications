@@ -1,10 +1,10 @@
 Starting STM model . . . 
 STM version 0.21, 3 February 2023
-Date and time: 2023/02/03 15:54:14
+Date and time: 2023/02/05 06:28:38
 
 Simulation ID: A
 User par file: ../pars/A_user_pars.txt       
-Par file: ../pars/pars.txt              
+Par file: ../final_pars/pars.txt        
 Weather file: ../weather/Backa_weather.csv  
 Level file: ../level/A_level.txt          
 
@@ -19018,4 +19018,4 @@ Level file: ../level/A_level.txt
  Warning: day of year          100 , hour          24 , Slurry depth is greater than maximum depth! Check inputs.
 
 Done!
-Run time:    0.0370  seconds
+Run time:    0.0360  seconds
