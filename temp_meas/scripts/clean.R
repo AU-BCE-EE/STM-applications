@@ -21,7 +21,17 @@ dat <- subset(dat, depth == depth.min | depth == depth.max)
 dat <- subset(dat, site != 'C' | as.Date(date) > as.Date('2020-06-18'))
 
 # Average measured temperature
-dat.mean <- aggregate(temp ~ site + date, data = dat, FUN = mean)
+dat.mean <- data.table(aggregate(temp ~ site + date, data = dat, FUN = mean))
+
+# Ottawa data already average by day of year
+dat.ca$country <- 'Canada'
+dat.ca$date <- date(as.POSIXct(paste(dat.ca$doy, dat.ca$year), format = '%j %Y'))
+
+# Add to DK and SE data
+dat.mean <- rbind(dat.mean, dat.ca[, c('site', 'date', 'temp')])
+
+# DOY
+dat.mean$doy <- as.integer(as.character(dat.mean$date, format = '%j'))
 
 # Get unique depths used for reporting
 depths <- unique(dat[, c('site', 'depth.min', 'depth.max')])
