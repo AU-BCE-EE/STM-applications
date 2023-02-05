@@ -26,6 +26,7 @@ dat.mean <- data.table(aggregate(temp ~ site + date, data = dat, FUN = mean))
 # Ottawa data already average by day of year
 dat.ca$country <- 'Canada'
 dat.ca$date <- date(as.POSIXct(paste(dat.ca$doy, dat.ca$year), format = '%j %Y'))
+dat.ca <- dat.ca[!is.na(dat.ca$temp), ]
 
 # Add to DK and SE data
 dat.mean <- rbind(dat.mean, dat.ca[, c('site', 'date', 'temp')])
