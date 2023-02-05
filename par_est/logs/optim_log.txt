@@ -1,13 +1,13 @@
 $par
      Rslur      Rsoil     absorp 
-0.44976936 1.20226615 0.02740676 
+0.54583256 1.21134483 0.02846151 
 
 $value
-[1] 5112.277
+[1] 7482.398
 
 $counts
 function gradient 
-      11       11 
+      30       30 
 
 $convergence
 [1] 0

@@ -23,11 +23,11 @@ resCalc <- function(p, meas, fixed){
           ./stm F ../pars/pars.txt ../pars/F_user_pars.txt ../weather/Ottawa_weather.csv ../level/F_level.csv')
 
   # Move output
-  system('mv *_temp.csv* ../stm_output')
-  system('mv *_weather* ../stm_output')
-  system('mv *_log* ../stm_output')
-  system('mv *_summary* ../stm_output')
-  system('mv *_rates* ../stm_output')
+  system('mv *_temp.csv* ../stm_output &
+          mv *_weather* ../stm_output &
+          mv *_log* ../stm_output &
+          mv *_summary* ../stm_output &
+          mv *_rates* ../stm_output')
 
   # Read in calculated temperatures
   mod <- data.frame()
