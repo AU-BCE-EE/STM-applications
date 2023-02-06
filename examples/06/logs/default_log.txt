@@ -1,6 +1,6 @@
 Starting STM model . . . 
-STM version 0.19, 16 January 2023
-Date and time: 2023/01/16 18:31:29
+STM version 0.21, 3 February 2023
+Date and time: 2023/02/05 07:57:36
 
 Simulation ID: default
 User par file: pars/user_pars_noheat.txt     
@@ -9,4 +9,4 @@ Weather file: weather/weather.csv
 Level file: level.csv                     
 
 Done!
-Run time:    0.0290  seconds
+Run time:    0.0410  seconds
