@@ -38,4 +38,4 @@ dat.mean$doy <- as.integer(as.character(dat.mean$date, format = '%j'))
 depths <- unique(dat[, c('site', 'depth.min', 'depth.max')])
 
 # Get date ranges
-dates <- aggregate(date ~ site, data = dat, FUN = function(x) as.character(range(x)))
+dates <- aggregate(date ~ site, data = dat.mean, FUN = function(x) as.character(range(x)))
