@@ -7,7 +7,7 @@ resCalc <- function(p, meas, fixed){
   p <- abs(p)
   cat(signif(p, 4), ': ')
   if (!missing(fixed)) {
-    p <- c(p, fixed)
+    p <- signif(c(p, fixed), 5)
   }
 
   # Write parameter values to file
@@ -16,24 +16,28 @@ resCalc <- function(p, meas, fixed){
     system(paste0('sed -i s/', names(p)[i], '/', p[i], '/g ../pars/pars.txt'))
   }
 
+  # Remove old output
+  system('rm ../stm_output_cal/*.*')
+
   # Run model
-  system('./stm A ../pars/pars.txt ../pars/A_user_pars.txt ../weather/Backa_weather.csv ../level/A_level.txt &
-          ./stm B ../pars/pars.txt ../pars/B_user_pars.txt ../weather/Uppsala_weather.csv ../level/B_level.txt &
-          ./stm D ../pars/pars.txt ../pars/D_user_pars.txt ../weather/Backa_weather.csv ../level/D_level.txt &
-          ./stm F ../pars/pars.txt ../pars/F_user_pars.txt ../weather/Ottawa_weather.csv ../level/F_level.csv')
+  system('./stm A ../pars/pars.txt ../pars/A_user_pars.txt ../weather/Backa_weather.csv ../level/A_level.txt &&
+          ./stm B ../pars/pars.txt ../pars/B_user_pars.txt ../weather/Uppsala_weather.csv ../level/B_level.txt &&
+          ./stm D ../pars/pars.txt ../pars/D_user_pars.txt ../weather/Backa_weather.csv ../level/D_level.txt') ##&&
+
+          ##./stm F ../pars/pars.txt ../pars/F_user_pars.txt ../weather/Ottawa_weather.csv ../level/F_level.csv')
 
   # Move output
-  system('mv *_temp.csv* ../stm_output &
-          mv *_weather* ../stm_output &
-          mv *_log* ../stm_output &
-          mv *_summary* ../stm_output &
-          mv *_rates* ../stm_output')
+  system('mv *_temp.csv* ../stm_output_cal &&
+          mv *_weather* ../stm_output_cal &&
+          mv *_log* ../stm_output_cal &&
+          mv *_summary* ../stm_output_cal &&
+          mv *_rates* ../stm_output_cal')
 
   # Read in calculated temperatures
-  mod <- data.frame()
-  ff <- list.files('../stm_output', pattern = 'temp.csv')
+  mod <- data.table()
+  ff <- list.files('../stm_output_cal', pattern = 'temp.csv')
   for (i in ff) {
-    d <- read.csv(paste0('../stm_output/', i), skip = 2, header = TRUE)
+    d <- fread(paste0('../stm_output_cal/', i), skip = 2, header = TRUE)
     d$site <- substr(i, 1, 1)
     mod <- rbind(mod, d)
   }
@@ -43,7 +47,7 @@ resCalc <- function(p, meas, fixed){
   # So mod$year of 1 (first year of sim) is 2018, giving about 2+ year of startup
   # For Ottawa, first measurements are in August 2015
   mod$year[mod$site == 'F'] <- 2012 + mod$year[mod$site == 'F']
-  mod$date <- as.POSIXct(paste(mod$year, mod$doy), format = '%Y %j')
+  mod$date <- as.POSIXct(paste(mod$year, mod$doy), format = '%Y %j', tz = 'UTC')
 
   # Merge measured and calculated
   dat <- merge(meas[, c('site', 'date', 'temp')], mod[, c('site', 'date', 'slurry_temp')], by = c('site', 'date'))
@@ -52,9 +56,10 @@ resCalc <- function(p, meas, fixed){
   res <- dat$slurry_temp - dat$temp
   #obj <- sum(abs(res))
   obj <- sum(res^2)
-
-  #if (obj < 1300) browser()
   cat(signif(obj, 6), '\n')
+  #cat(c(length(res), nrow(mod), nrow(meas), signif(obj, 6)), '\n')
+  #if (length(res) != 1525) browser()
+  #cat(c(p, obj, length(res), '\n'), file = 'rec1.csv', append = TRUE)
 
   return(obj)
 }

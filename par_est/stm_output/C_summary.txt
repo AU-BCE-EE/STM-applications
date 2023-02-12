@@ -1,3 +1,0 @@
- Average slurry mass (t):    509.631287    
- Average addition rate (t/d):    4.11837196    
- Average retention time (d):    123.745811    
