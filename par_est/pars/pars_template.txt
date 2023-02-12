@@ -10,4 +10,4 @@ Heat transfer resistance terms (K-m2/W)
 Other parameters
  Absorptivity  Soil constant depth    Soil offset    Heat generation
     (-)              (m)                (deg. C)         (W/m3)
-  absorp              soilConstDepth         soilOffset        heatGen
+  absorp              soilConstDepth                    soilOffset               heatGen

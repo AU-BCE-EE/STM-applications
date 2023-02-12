@@ -1,0 +1,13 @@
+Starting STM model . . . 
+STM version 0.24, 12 February 2023
+Date and time: 2023/02/12 13:50:23
+
+Simulation ID: B
+User par file: ../pars/B_user_pars.txt       
+Par file: ../pars/pars.txt              
+Weather file: ../weather/Uppsala_weather.csv
+Level file: ../level/B_level.txt          
+
+ Warning: Day of year > 365 found in weather file, and will be ignored.
+Done!
+Run time:    0.0270  seconds
