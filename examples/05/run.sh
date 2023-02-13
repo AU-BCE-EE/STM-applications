@@ -2,28 +2,18 @@
 
 # Remove old results
 rm stm_output/*.*
-#rm plots/*.*
 
-sim_start_time="$SECONDS"
-
-# Run simulation
-./stm small pars_small_tanks.txt user_pars.txt weather.csv
-./stm def pars.txt user_pars.txt weather.csv
-
-sim_end_time="$SECONDS"
+# Run all simulations in parallel
+./stm default pars/pars.txt pars/user_pars_noheat.txt weather/weather.csv level.csv &
+./stm constant pars/pars.txt pars/user_pars_constant.txt weather/weather.csv level.csv 
 
 # Move output
 mv *_temp.csv* stm_output
 mv *_weather* stm_output
 mv *_rates* stm_output
 mv *_log* logs
+mv *_summary* stm_output
 
-# Run R scripts
-Rscript 'plot.R'
-
-plot_end_time="$SECONDS"
-
-echo "Model runs took $(($sim_end_time-$sim_start_time)) seconds."
-echo "Plotting took $(($plot_end_time-$sim_end_time)) seconds."
-echo "Check the logs directory for information."
-
+cd scripts_plot
+  Rscript 'main.R'
+cd ..

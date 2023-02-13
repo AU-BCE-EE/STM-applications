@@ -1,6 +1,6 @@
 Starting STM model . . . 
-STM version 0.16, 6 December 2022
-Date and time: 2022/12/09 12:47:30
+STM version 0.24, 12 February 2023
+Date and time: 2023/02/13 04:59:54
 
 Simulation ID: Duplin
 User par file: pars/user_pars7.txt           
@@ -5235,4 +5235,4 @@ Slurry level is calculated (no input file)
  Warning: day of year           99 , hour          24 , Slurry depth is greater than maximum depth! Check inputs.
 
 Done!
-Run time:    0.0360  seconds
+Run time:    0.0740  seconds
