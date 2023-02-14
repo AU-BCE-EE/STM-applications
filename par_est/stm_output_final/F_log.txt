@@ -1,12 +1,12 @@
 Starting STM model . . . 
 STM version 0.24, 12 February 2023
-Date and time: 2023/02/12 13:53:33
+Date and time: 2023/02/14 11:47:40
 
 Simulation ID: F
 User par file: ../pars/F_user_pars.txt       
 Par file: ../final_pars/pars.txt        
 Weather file: ../weather/Ottawa_weather.csv 
-Level file: ../level/F_level.csv          
+Level file: ../slurry_level/F_level.txt   
 
 Done!
-Run time:    0.0280  seconds
+Run time:    0.0270  seconds

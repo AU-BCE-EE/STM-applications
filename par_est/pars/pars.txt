@@ -6,8 +6,8 @@ Slurry physical constants
    1000        4190           2100          333000         0.0
 Heat transfer resistance terms (K-m2/W)
   Air    Wall   Floor   Slurry   Soil
-  0.02   0.3     0.3    0.52104    1.1917 
+  0.02   0.3     0.3    0.50921    1.2325 
 Other parameters
  Absorptivity  Soil constant depth    Soil offset    Heat generation
     (-)              (m)                (deg. C)         (W/m3)
-  0.018321              3         2        0
+  0.021278              3                    2               0

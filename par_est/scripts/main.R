@@ -5,11 +5,13 @@
 rm(list = ls())
 
 # Set parameter set name
-parver <- '0.12'
+parver <- '0.13'
 
 source('remove.R')
 source('packages.R')
 source('functions.R')
+source('copy_weather.R')
+source('copy_level.R')
 source('load_meas.R')
 source('cal.R')
 source('export.R')

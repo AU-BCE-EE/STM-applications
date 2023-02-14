@@ -20,18 +20,18 @@ resCalc <- function(p, meas, fixed){
   system('rm ../stm_output_cal/*.*')
 
   # Run model
-  system('./stm A ../pars/pars.txt ../pars/A_user_pars.txt ../weather/Backa_weather.csv ../level/A_level.txt &&
-          ./stm B ../pars/pars.txt ../pars/B_user_pars.txt ../weather/Uppsala_weather.csv ../level/B_level.txt &&
-          ./stm D ../pars/pars.txt ../pars/D_user_pars.txt ../weather/Backa_weather.csv ../level/D_level.txt') ##&&
+  system('./stm A ../pars/pars.txt ../pars/A_user_pars.txt ../weather/Backa_weather.csv ../slurry_level/A_level.txt &&
+          ./stm B ../pars/pars.txt ../pars/B_user_pars.txt ../weather/Uppsala_weather.csv ../slurry_level/B_level.txt &&
+          ./stm D ../pars/pars.txt ../pars/D_user_pars.txt ../weather/Backa_weather.csv ../slurry_level/D_level.txt') ##&&
 
           ##./stm F ../pars/pars.txt ../pars/F_user_pars.txt ../weather/Ottawa_weather.csv ../level/F_level.csv')
 
   # Move output
   system('mv *_temp.csv* ../stm_output_cal &&
-          mv *_weather* ../stm_output_cal &&
-          mv *_log* ../stm_output_cal &&
-          mv *_summary* ../stm_output_cal &&
-          mv *_rates* ../stm_output_cal')
+          mv *_weather.csv* ../stm_output_cal &&
+          mv *_log.txt* ../stm_output_cal &&
+          mv *_summary.txt* ../stm_output_cal &&
+          mv *_rates.csv* ../stm_output_cal')
 
   # Read in calculated temperatures
   mod <- data.table()
