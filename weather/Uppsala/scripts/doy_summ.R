@@ -1,31 +1,42 @@
 # Prepare Uppsala weather data for input in stm model
 # Note that model currently accepts one obs per DOY
 
-library(lubridate)
-source('../functions/rounddf.R')
+rm(list = ls())
 
-dat <- read.csv('../measurements/Uppsala_weather.csv', skip = 2)
+library(data.table)
+
+source('../../../R_functions/rounddf.R')
+
+dat <- data.table::fread('../measurements/Uppsala_weather.csv', skip = 2)
 
 # Sort out time
 dat$hour <- sprintf('%04d', dat$hour)
-dat$date.time <- ymd_hm(paste(dat$date, dat$hour))
+dat$date.time <- as.POSIXct(paste(dat$date, dat$hour), format = '%Y%m%d %H%M')
 dat$doy <- as.integer(as.character(dat$date.time, format = '%j'))
 dat$year <- as.integer(as.character(dat$date.time, format = '%Y'))
-dat$date <- date(dat$date.time)
+dat$date <- as.Date(dat$date.time)
 
 # Subset
-# Raanas site measurements started 7 May 2020 ended 25 May 2021
-# Use 2021 measurements for May
-dat <- subset(dat, date >= ymd('2020 06 01') & date <= ymd('2021 07 31'))
+# Site B measurements started 30 April 2020 ended 26 May 2021
+# So split May, 15 May = DOY 135 (2020) or 136 (2021)
+# Problem is this original data file only has 1 year, and starts 15 June!
+# So omit subset
+## dat <- dat[(year == 2020 & doy >= 135) | (year == 2021 & doy < 135), ]
 
-# Summarize by doy
-mns <- aggregate(dat[, c('temp.1.5m', 'rad')], dat[, c('doy'), drop = FALSE], mean)
-yrs <- aggregate(dat[, c('year')], dat[, c('doy'), drop = FALSE], function(x) x[1])
-ns <- aggregate(dat[, c('temp.1.5m')], dat[, c('doy'), drop = FALSE], function(x) length(x))
-datd <- merge(mns, yrs, by = 'doy')
-datd <- rounddf(datd, 3, signif)
+# Daily means
+datd <- dat[, .(air.temp = mean(temp.1.5m), glorad = mean(rad), n = sum(!is.na(temp.1.5m)), year = year[1], date = date[1]), by = doy]
 
-# Check n
-if (any(ns$n > 24)) stop('Count error')
+datd <- rounddf(datd, 3, func = signif)
+datd <- datd[order(doy)]
+
+if (any(datd$n > 24)) stop('Something wrong! n > 24.')
 
 write.csv(datd, '../output/Uppsala_weather.csv', row.names = FALSE)
+
+png('../plots/Uppsala_air_temp.png', height = 500, width = 500)
+  plot(air.temp ~ doy, data = datd, type = 'o')
+dev.off()
+
+png('../plots/Uppsala_radiation.png', height = 500, width = 500)
+  plot(glorad ~ doy, data = datd, type = 'o')
+dev.off()

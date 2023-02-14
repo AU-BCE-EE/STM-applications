@@ -4,30 +4,39 @@ rm(list = ls())
 
 library(data.table)
 
-source('../../functions/rounddf.R')
+source('../../../R_functions/rounddf.R')
 
-dat <- fread('../measurements/ottawa_sel.csv')
-dat <- dat[order(dat$year, dat$doy), ]
+dat <- data.table::fread('../measurements/ottawa_sel.csv')
 
 # Sort out date
 dat$date <- as.POSIXct(paste(dat$year, dat$doy), format = '%Y %j')
 dat$doy <- as.integer(as.character(dat$date, format = '%j'))
 dat$year <- as.integer(as.character(dat$date, format = '%Y'))
 
-# Ottawa location measurements started DOY 220 (8 Aug) 2015 and ended 277 (3 Oct) 2015 (see STM-applications/temp_meas/data-all/dates.csv)
-# So here we try to split difference
-cut.doy <- 205
+# Remove duplicate row with what seems to be erroneous temperaure value 
+dat <- dat[doy != 83 | temp != 1.517]
 
 # Convert radiation from MJ/m2 (in an hour) to W/m2
 dat$glorad <- dat$rad * 1E6 / 3600
 
-# Trim 
-dat <- dat[(dat$year == 2015 & dat$doy >= cut.doy) | (dat$year == 2016 & dat$doy < cut.doy), c('doy', 'temp', 'glorad')]
+# Ottawa location measurements started DOY 220 (8 Aug) 2015 and ended 277 (3 Oct) 2015 (see STM-applications/temp_meas/data-all/dates.csv)
+# So here we try to split difference
+dat <- dat[(year == 2015 & doy >= 205) | (year == 2016 & doy < 205), ]
 
 # Daily means
-datd <- dat[, .(temp = mean(temp), glorad = mean(glorad)), by = doy]
+datd <- dat[, .(air.temp = mean(temp), glorad = mean(glorad), n = sum(!is.na(temp)), year = year[1], date = date[1]), by = doy]
 
-datd <- rounddf(datd, 4, func = signif)
-datd <- datd[order(datd$doy), ]
+datd <- rounddf(datd, 3, func = signif)
+datd <- datd[order(doy)]
+
+if (any(datd$n > 24)) stop('Something wrong! n > 24.')
 
 write.csv(datd, '../output/Ottawa_weather.csv', row.names = FALSE)
+
+png('../plots/Ottawa_air_temp.png', height = 500, width = 500)
+  plot(air.temp ~ doy, data = datd, type = 'o')
+dev.off()
+
+png('../plots/Ottawa_radiation.png', height = 500, width = 500)
+  plot(glorad ~ doy, data = datd, type = 'o')
+dev.off()
