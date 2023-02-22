@@ -4,6 +4,8 @@ rm(list = ls())
 
 library(data.table)
 
+source('interpm.R')
+
 source('../../../R_functions/rounddf.R')
 
 dat <- data.table::fread('../measurements/ottawa_sel.csv')
@@ -25,18 +27,26 @@ datd <- dat[, .(air.temp = mean(temp), glorad = mean(glorad), n = sum(!is.na(tem
 datd <- rounddf(datd, 3, func = signif)
 datd <- datd[order(date)]
 
-if (any(datd$n > 24)) stop('Something wrong! n > 24.')
+#if (any(datd$n > 24)) stop('Something wrong! n > 24.')
 
 # Drop errors
-datd <- datd[n == 24, ]
-datd <- datd[glorad < 1000 & glorad > 0, ]
+datd[n != 24, `:=` (air.temp = NA, glorad = NA) ]
+datd[glorad > 1000 | glorad < 0, glorad := NA]
+datd[, `:=` (interp.glorad = FALSE, interp.air.temp = FALSE)]
+datd[is.na(glorad), interp.glorad := TRUE]
+datd[is.na(air.temp), interp.air.temp := TRUE]
+
+# Interpolate missing values
+datd <- as.data.table(interpm(as.data.frame(datd), 'date', c('glorad', 'air.temp')))
 
 write.csv(datd, '../output/Ottawa_weather_by_date.csv', row.names = FALSE)
 
 png('../plots/Ottawa_air_temp_date.png', height = 500, width = 500)
-  plot(air.temp ~ date, data = datd, type = 'o')
+  plot(air.temp ~ date, data = datd, type = 'o', col = 'gray45')
+  points(air.temp ~ date, data = datd, subset = interp.air.temp, col = 'red')
 dev.off()
 
 png('../plots/Ottawa_radiation_date.png', height = 500, width = 500)
-  plot(glorad ~ date, data = datd, type = 'o')
+  plot(glorad ~ date, data = datd, type = 'o', col = 'gray45')
+  points(glorad ~ date, data = datd, subset = interp.air.temp, col = 'red')
 dev.off()
