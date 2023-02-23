@@ -41,6 +41,10 @@ datd <- as.data.table(interpm(as.data.frame(datd), 'date', c('glorad', 'air.temp
 
 write.csv(datd, '../output/Ottawa_weather_by_date.csv', row.names = FALSE)
 
+# Write out just 2020 data
+datd2020 <- datd[year == 2020, .(doy, air.temp, glorad, year, date)]
+write.csv(datd2020, '../output/Ottawa_weather_2020.csv', row.names = FALSE)
+
 png('../plots/Ottawa_air_temp_date.png', height = 500, width = 500)
   plot(air.temp ~ date, data = datd, type = 'o', col = 'gray45')
   points(air.temp ~ date, data = datd, subset = interp.air.temp, col = 'red')
