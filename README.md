@@ -8,9 +8,9 @@ Find contact information for questions etc. here: <https://au.dk/sasha.hafner@bc
 Data used in the examples were kindly shared by Anna Holm Støckler, Kristina Mjöfors, Søren O. Petersen, and Chih-Yu Hung.
 
 # Getting started
-First, install STM by following the instructions under "Installation" in the [STM repo README file](https://github.com/sashahafner/STM#readme).
+First, install or compile STM by following the instructions under "Installation" in the [STM repo README file](https://github.com/sashahafner/STM#readme).
 New STM users interested in learning how to use the program should copy this entire STM-applications repository.
-The simplest way for non-GitHub users to do this is to click on the green "Code" button toward the top right of the repo main page and then "Download ZIP".
+If "clone this repo" doesn't make sense, the simplest way for non-GitHub users to do get a copy of these files is to click on the green "Code" button toward the top right of the repo main page and then "Download ZIP".
 Extract the downloaded file, and check out the `examples` directory.
 You can find more details below.
 
