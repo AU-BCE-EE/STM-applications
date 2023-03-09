@@ -11,7 +11,6 @@ system('./stm A ../final_pars/pars.txt ../pars/A_user_pars.txt ../weather/Backa_
 system('mv *_temp.csv* ../stm_output_final &
         mv *_weather.csv* ../stm_output_final &
         mv *_log.txt* ../stm_output_final &
-        mv *_summary.txt* ../stm_output_final &
         mv *_rates.csv* ../stm_output_final')
 
 

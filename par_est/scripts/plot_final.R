@@ -57,6 +57,7 @@ ggsave('../plots/soil_temp_doy.png', height = 6, width = 8)
 # Slurry level
 ggplot(mod, aes(doy, slurry_depth)) +
   geom_line() +
+  geom_point() +
   facet_wrap(~ site, scales = 'free_x') +
   labs(x = 'Day of year', y = 'Slurry level (m)') 
 ggsave('../plots/slurry_level_doy.png', height = 6, width = 8)

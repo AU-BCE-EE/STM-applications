@@ -24,13 +24,10 @@ resCalc <- function(p, meas, fixed){
           ./stm B ../pars/pars.txt ../pars/B_user_pars.txt ../weather/Uppsala_weather.csv ../slurry_level/B_level.txt &&
           ./stm D ../pars/pars.txt ../pars/D_user_pars.txt ../weather/Backa_weather.csv ../slurry_level/D_level.txt') ##&&
 
-          ##./stm F ../pars/pars.txt ../pars/F_user_pars.txt ../weather/Ottawa_weather.csv ../level/F_level.csv')
-
   # Move output
   system('mv *_temp.csv* ../stm_output_cal &&
           mv *_weather.csv* ../stm_output_cal &&
           mv *_log.txt* ../stm_output_cal &&
-          mv *_summary.txt* ../stm_output_cal &&
           mv *_rates.csv* ../stm_output_cal')
 
   # Read in calculated temperatures
@@ -43,10 +40,8 @@ resCalc <- function(p, meas, fixed){
   }
 
   # First measurements start in May (Back, Raan) or April (Fitt) 2020 and end in end of 2021
-  mod$year[mod$site != 'F'] <- 2017 + mod$year[mod$site != 'F']
+  mod$year <- 2017 + mod$year
   # So mod$year of 1 (first year of sim) is 2018, giving about 2+ year of startup
-  # For Ottawa, first measurements are in August 2015
-  mod$year[mod$site == 'F'] <- 2012 + mod$year[mod$site == 'F']
   mod$date <- as.POSIXct(paste(mod$year, mod$doy), format = '%Y %j', tz = 'UTC')
 
   # Merge measured and calculated
@@ -54,12 +49,8 @@ resCalc <- function(p, meas, fixed){
   nddat <<- dat
 
   res <- dat$slurry_temp - dat$temp
-  #obj <- sum(abs(res))
   obj <- sum(res^2)
   cat(signif(obj, 6), '\n')
-  #cat(c(length(res), nrow(mod), nrow(meas), signif(obj, 6)), '\n')
-  #if (length(res) != 1525) browser()
-  #cat(c(p, obj, length(res), '\n'), file = 'rec1.csv', append = TRUE)
 
   return(obj)
 }
