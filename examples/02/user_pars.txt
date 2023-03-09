@@ -14,7 +14,7 @@ None      Added slurry temperature description, Constant = fixed temperature, No
 0         Temperature of added slurry (degrees C) (ignored if using "None")
 10        Slurry addition rate (tonnes/d) (ignored if using level file)
 400       Residual slurry volume left when emptying (m3) (ignored if using level file)
-100       Emptying day of year (ignored if using level file)
+100       Emptying day of year (ignored if using level file or if < 1 or > 365) 
 0         Emptying day of year (ignored if using level file or if < 1 or > 365) 
 
 Weather curve parameter for STM heat transfer model (ignored if using level file)
