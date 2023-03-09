@@ -1,6 +1,6 @@
 # Runs all examples with latest version of model and parameter set
 
-# Get current parameter file
+# Get latest parameter file
 wget https://raw.githubusercontent.com/sashahafner/STM-applications/master/par_sets/pars.txt
 
 # Copy it into dir for each example
@@ -8,8 +8,6 @@ cp pars.txt 01/pars.txt
 cp pars.txt 02/pars.txt
 cp pars.txt 03/pars/pars.txt
 cp pars.txt 04/pars/pars.txt
-cp pars.txt 05/pars/pars.txt
-cp pars.txt 06/pars.txt
 
 # Remove original
 rm pars.txt
@@ -31,8 +29,6 @@ cp stm 01/
 cp stm 02/
 cp stm 03/
 cp stm 04/
-cp stm 05/
-cp stm 06/
 
 # And remove it
 rm stm
@@ -53,13 +49,6 @@ cd ../04
 echo 'Example 04 (slow one because of ABM)'
 ./run.sh
 echo ''
-cd ../05
-echo 'Example 05'
-./run.sh
-echo ''
-cd ../06
-echo 'Example 06'
-./run.sh
 cd ..
 
 # Remove all copies of stm
