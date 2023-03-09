@@ -1,4 +1,4 @@
-Parameter values for STM heat transfer model - version 0.14
+Parameter values for STM heat transfer model - version 1.0
 Slurry physical constants
               Liquid         Frozen                      Freezing
   Density  specific heat  specific heat  Heat of fusion   point

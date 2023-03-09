@@ -1,5 +1,5 @@
 Starting STM version 1.0 (9 March 2023)      
-Date and time: 2023/03/09 12:34:41
+Date and time: 2023/03/09 12:41:17
 
 Simulation ID: B
 User par file: ../pars/B_user_pars.txt       
@@ -9,4 +9,4 @@ Level file: ../slurry_level/B_level.txt
 
  Warning: Day of year > 365 found in weather file, and will be ignored.
 Done!
-Run time:    0.0320  seconds
+Run time:    0.0340  seconds
