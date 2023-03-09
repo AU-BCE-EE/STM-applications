@@ -10,8 +10,7 @@ This README file explains how to run the simulations in example 2.
 
 
 # Linux and macOS
-1a. Install STM by following the instructions under "Installation" in the [STM repo README file](https://github.com/sashahafner/STM#readme). 
-1b. Alternatively, compile it yourself by following the instructions in the [STM repo README file](https://github.com/sashahafner/STM#readme).
+1. Install STM by following the instructions under "Installation" in the [STM repo README file](https://github.com/sashahafner/STM#readme). Alternatively, compile it yourself by following the instructions in the [STM repo README file](https://github.com/sashahafner/STM#readme).
 2. In Bash, Terminal, or another shell, navigate to the directory with this README file and STM input files.
 3. Run `stm` in a shell with the following command: `./stm Ex02 pars.txt user_pars.txt`. 4. 4. Check the working directory for output files. `Ex02_temp.csv` has the predicted temperature values and can be opened in any spreadsheet program or text editor. Data could be plotted using R, Python, Excel, or similar programs. Make sure the file `Ex02_log.txt` confirms that the correct input files were used. 
 

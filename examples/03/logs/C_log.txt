@@ -1,6 +1,5 @@
-Starting STM model . . . 
-STM version 0.24, 12 February 2023
-Date and time: 2023/02/12 17:26:09
+Starting STM version 1.0 (9 March 2023)      
+Date and time: 2023/03/09 13:20:12
 
 Simulation ID: C
 User par file: pars/C_user_pars.txt          
@@ -10,4 +9,4 @@ Level file: level/C_level.txt
 
  Warning: Day of year > 365 found in weather file, and will be ignored.
 Done!
-Run time:    0.0330  seconds
+Run time:    0.0290  seconds

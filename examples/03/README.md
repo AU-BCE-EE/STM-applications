@@ -11,7 +11,7 @@ But you will still get output files from STM.
 1. Double-click the batch file `run.bat`.
 See the file contents (open in a text editor) to understand what the file does and how to make changes.
 
-# Linux
-Run the shell script `run.sh` in a shell with the following command: `./run.sh`.
-As with Windows, open the script to see exactly what it does.
+# Linux and macOS
+1. Install STM by following the instructions under "Installation" in the [STM repo README file](https://github.com/sashahafner/STM#readme). Alternatively, compile it yourself by following the instructions in the [STM repo README file](https://github.com/sashahafner/STM#readme).
+2. Run the shell script `run.sh` in a shell with the following command: `./run.sh`. As with Windows, open the script to see exactly what it does.
 
