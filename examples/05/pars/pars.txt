@@ -1,0 +1,13 @@
+Parameter values for STM heat transfer model - version 1.0
+Slurry physical constants
+              Liquid         Frozen                      Freezing
+  Density  specific heat  specific heat  Heat of fusion   point
+  (kg/m3)    (J/kg-K)       (J/kg-K)        (J/kg)       (deg. C)
+   1000        4190           2100          333000         0.0
+Heat transfer resistance terms (K-m2/W)
+  Air    Wall   Floor   Slurry   Soil
+  0.02   0.3     0.3    0.541    1.24 
+Other parameters
+ Absorptivity  Soil constant depth    Soil offset    Heat generation
+    (-)              (m)                (deg. C)         (W/m3)
+  0.0193              2                    2               0

@@ -1,0 +1,12 @@
+Starting STM version 1.1 (20 March 2024)     
+Date and time: 2024/08/21 13:33:09
+
+Simulation ID: small
+User par file: pars/user_pars_small.txt                          
+Par file: pars/pars.txt                                     
+Weather file: weather/weather.csv                               
+Level file: level/level_small.csv                             
+
+ Warning: Day of year > 365 found in weather file, and will be ignored.
+Done!
+Run time:    0.0200  seconds
