@@ -1,12 +1,21 @@
-Starting STM version 1.1 (20 March 2024)     
-Date and time: 2024/08/21 13:33:09
+Starting STM version 1.0 (9 March 2023)      
+Date and time: 2024/08/23 10:54:51
 
 Simulation ID: small
-User par file: pars/user_pars_small.txt                          
-Par file: pars/pars.txt                                     
-Weather file: weather/weather.csv                               
-Level file: level/level_small.csv                             
-
+User par file: pars\user_pars_small.txt      
+Par file: pars\pars.txt                 
+Weather file: weather\weather.csv           
+Level file: level\level_small.csv         
+ 
  Warning: Day of year > 365 found in weather file, and will be ignored.
+ Warning: day of year          365 , hour          24 
+ , Slurry depth is greater than maximum depth! Check inputs.
+ 
+ Warning: day of year          365 , hour          24 
+ , Slurry depth is greater than maximum depth! Check inputs.
+ 
+ Warning: day of year          365 , hour          24 
+ , Slurry depth is greater than maximum depth! Check inputs.
+ 
 Done!
-Run time:    0.0200  seconds
+Run time:    0.0310  seconds

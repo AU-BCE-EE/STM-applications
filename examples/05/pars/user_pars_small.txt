@@ -4,7 +4,7 @@ Settings for STM heat transfer model
 1         Number of identical storages
 5.0       Total (maximum) depth (m)
 0.0       Buried depth (to bottom) (m)
-15.8      Dimension 1 of tank (length or diameter) (m)
+28        Dimension 1 of tank (length or diameter) (m)
 0         Dimension 2 of tank (width or set to 0 for circular tanks) (m)
 616       Effective slurry-to-air convection area (m2) (usually simply upper exposed area)
 616       Effective area exposed to solar radiation (m2)
