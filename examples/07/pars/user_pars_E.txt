@@ -2,13 +2,13 @@ Settings for STM heat transfer model
 730       Duration of simulation (days)
 1         Starting day of simulation as day of year (1-365, no leap years)
 1         Number of identical storages
-5         Total (maximum) depth (m)
+4         Total (maximum) depth (m)
 0         Buried depth (to bottom) (m)
-30        Dimension 1 of tank (length or diameter) (m)
+6         Dimension 1 of tank (length or diameter) (m)
 0         Dimension 2 of tank (width or set to 0 for circular tanks) (m)
-700       Effective slurry-to-air convection area (m2) (usually simply upper exposed area)
-700       Effective area exposed to solar radiation (m2)
-3500      Initial volume of slurry (m3) (ignored if using level file)
+28        Effective slurry-to-air convection area (m2) (usually simply upper exposed area)
+28        Effective area exposed to solar radiation (m2)
+110       Initial volume of slurry (m3) (ignored if using level file)
 15        Initial slurry temperature (degrees C)
 None      Added slurry temperature description, Constant = fixed temperature, None = no heat
 0         Temperature of added slurry (degrees C) (ignored if using "None")

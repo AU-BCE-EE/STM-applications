@@ -1,0 +1,11 @@
+Starting STM version 1.1 (20 March 2024)     
+Date and time: 2025/08/26 14:27:44
+
+Simulation ID: E
+User par file: pars/user_pars_E.txt                              
+Par file: pars/pars_conc.txt                                
+Weather is calculated (no input file)
+Slurry level is calculated (no input file)
+
+Done!
+Run time:    0.0050  seconds

@@ -1,4 +1,4 @@
-Parameter values for STM heat transfer model - version 1.0 modified for full-scale tent-covered tank
+Parameter values for STM heat transfer model - version 1.0 modified for full-scale concrete top-covered tank
 Slurry physical constants
               Liquid         Frozen                      Freezing
   Density  specific heat  specific heat  Heat of fusion   point
@@ -6,8 +6,8 @@ Slurry physical constants
    1000        4190           2100          333000         0.0
 Heat transfer resistance terms (K-m2/W)
   Air    Wall   Floor   Slurry   Soil
-  0.1    0.3     0.3    0.541    1.24 
+  0.8    0.3     0.3    0.541    1.24 
 Other parameters
  Absorptivity  Soil constant depth    Soil offset    Heat generation
     (-)              (m)                (deg. C)         (W/m3)
-    0.1               2                    2               0
+   0.01               2                    2               0
