@@ -1,3 +1,6 @@
 
 # Ignore STM executable
 stm
+
+# Crappy WSL files
+*TMP*
