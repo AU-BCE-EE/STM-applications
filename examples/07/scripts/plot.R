@@ -16,8 +16,11 @@ for (f in list.files('../stm_output', pattern = 'temp', full.names = TRUE)) {
 
 pp <- ggplot(dat, aes(doy, slurry_temp, colour = scenario)) +
         geom_line() +
-	geom_line(aes(doy, air_temp), colour = 'skyblue', width = 2, lty = 3) +
+	geom_line(aes(doy, air_temp), colour = 'skyblue', lwd = 2, lty = '1111') +
+        geom_label(data = dat[doy == 365, ], aes(label = scenario)) +
+        geom_label(data = dat[doy == 1, ], aes(label = scenario)) +
 	theme_bw() +
+	theme(legend.position = 'none') +
 	labs(x = 'Day of year', y = expression('Slurry temperature'~(degree*C)))
 
 ggsave('../plots/size_comp.png', pp, height = 4, width = 5)

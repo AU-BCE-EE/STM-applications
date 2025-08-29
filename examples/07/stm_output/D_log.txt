@@ -1,5 +1,5 @@
 Starting STM version 1.1 (20 March 2024)     
-Date and time: 2025/08/26 14:27:44
+Date and time: 2025/08/29 09:06:41
 
 Simulation ID: D
 User par file: pars/user_pars_D.txt                              
