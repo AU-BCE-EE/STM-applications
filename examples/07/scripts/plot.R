@@ -9,18 +9,21 @@ for (f in list.files('../stm_output', pattern = 'temp', full.names = TRUE)) {
 
   d <- fread(f, skip = 2)
   d <- d[day > 365, ]
-  d[, scenario := gsub('.+([ABCDEF])_.+', '\\1', f)]
+  d[, sim := gsub('\\.\\.\\/stm_output\\/(.+)_temp\\.csv', '\\1', f)]
   dat <- rbind(dat, d)
 
 }
 
-pp <- ggplot(dat, aes(doy, slurry_temp, colour = scenario)) +
-        geom_line() +
-	geom_line(aes(doy, air_temp), colour = 'skyblue', lwd = 2, lty = '1111') +
-        geom_label(data = dat[doy == 365, ], aes(label = scenario)) +
-        geom_label(data = dat[doy == 1, ], aes(label = scenario)) +
-	theme_bw() +
-	theme(legend.position = 'none') +
-	labs(x = 'Day of year', y = expression('Slurry temperature'~(degree*C)))
+dat[, sim.nm := factor(sim, levels = c('3042', '640', '642', '220'),
+			labels = c('30 x 4 m, 2 m buried', '6 x 4 m', '6 x 4 m, 2 m buried', '2 x 2 m'))]
 
-ggsave('../plots/size_comp.png', pp, height = 4, width = 5)
+xbrks <- c(0, 50, 100, 150, 200, 250, 300, 365)
+
+ggplot(dat, aes(doy, slurry_temp, colour = sim.nm)) +
+  geom_line() +
+  geom_label(data = dat[doy == 365, ], aes(y = slurry_temp + c(0., 0., 0., 0.), label = sim.nm), hjust = 0, size = 2.7) +
+  scale_x_continuous(breaks = xbrks, labels = xbrks, limits = c(0, 460)) +  
+  labs(x = 'Day of year', y = expression('Average slurry temperature'~(degree*C)), colour = '') +
+  theme_bw() +
+  theme(legend.position = 'none')
+ggsave('../plots/tank_size_comp_STM.png', height = 4, width = 5)
