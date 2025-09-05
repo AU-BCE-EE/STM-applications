@@ -1,0 +1,12 @@
+Starting STM version 1.1 (20 March 2024)     
+Date and time: 2025/09/05 16:47:36
+
+Simulation ID: 20_04_02
+User par file: pars/upars_20_04_02.txt                           
+Par file: pars/pars_tent.txt                                
+Weather file: weather/Tjele_weather.csv                         
+Level file: level/level_4.csv                                 
+
+ Warning: Day of year > 365 found in weather file, and will be ignored.
+Done!
+Run time:    0.0140  seconds

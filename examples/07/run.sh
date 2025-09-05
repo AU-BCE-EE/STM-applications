@@ -1,12 +1,10 @@
 # Run STM scenarios and plot results
-#
-
 
 # Run STM
-./stm 3042 pars/pars_tent.txt pars/user_pars_A.txt
-./stm 640 pars/pars_tent.txt pars/user_pars_C.txt
-./stm 642 pars/pars_tent.txt pars/user_pars_D.txt
-./stm 220 pars/pars_tent.txt pars/user_pars_F.txt
+./stm 20_04_02 pars/pars_tent.txt pars/upars_20_04_02.txt weather/Tjele_weather.csv level/level_4.csv
+./stm 06_04_00 pars/pars_tent.txt pars/upars_06_04_00.txt weather/Tjele_weather.csv level/level_4.csv
+./stm 06_04_02 pars/pars_tent.txt pars/upars_06_04_02.txt weather/Tjele_weather.csv level/level_4.csv
+./stm 02_02_00 pars/pars_tent.txt pars/upars_02_02_00.txt weather/Tjele_weather.csv level/level_2.csv
 
 # Move STM output
 mv *_rates.csv stm_output/
